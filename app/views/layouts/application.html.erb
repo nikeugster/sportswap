@@ -15,33 +15,6 @@
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
-    <div class="card-product col-9 p-3">
-      <img id="card-product-img" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-        <div class="profile">
-          <img class="avatar" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-            <div class="rating">
-              <% #@review.rating.to_i.times do  %>
-              <% 4.times do %>
-               <i class="fas fa-star"></i>
-              <% end %>
-              <% #(5 - @review.rating.to_i).times do  %>
-              <% 1.times do %>
-               <i class="far fa-star"></i>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-product-infos">
-        <p>Product description with <strong>relevant info</strong> only.</p>
-      </div>
-    </div>
-
     <%= yield %>
   </body>
 </html>

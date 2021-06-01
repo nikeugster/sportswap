@@ -1,0 +1,39 @@
+<div class="main-center">
+  <div class="card-product col-8 p-3 mb-3">
+    <%= cl_image_tag offer.photos[0].key, id: "card-product-img" %>
+    <div class="card-product-rightside">
+      <div class="card-product-infos pl-3">
+        <div class="card-title-location">
+          <h2><%= offer.title %></h2>
+          <h2><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %></h2>
+        </div>
+        <div class="card-title-info">
+          <div class="card-category-condition">
+            <p><%= offer.category %></p>
+            <p><%= offer.condition %></p>
+          </div>
+          <p><%= offer.location %></p>
+        </div>
+        <div class="profile pt-4">
+          <%= cl_image_tag offer.user.photo.key, class: "avatar" %>
+          <div class="card-avatar-info">
+            <p><%= offer.user.first_name %></p>
+            <div class="rating">
+              <% if offer.user.reviews.any? %>
+                <% average = offer.user.reviews.map { |review| review.rating }.sum / offer.user.reviews.length %>
+                <% average.times do %>
+                 <i class="fas fa-star"></i>
+                <% end %>
+                <% (5 - average).times do  %>
+                 <i class="far fa-star"></i>
+                <% end %>
+              <% else %>
+                <p>no reviews yet</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

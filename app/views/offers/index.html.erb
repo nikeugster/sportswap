@@ -1,0 +1,5 @@
+<h1 class="my-4">Sports Equipment</h1>
+
+<% @offers.each do |offer| %>
+  <%= render partial: 'shared/card-product', locals: {offer: offer} %>
+<% end %>
