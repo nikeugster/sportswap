@@ -35,6 +35,33 @@
   width: 50px;
 }
 
-.nav-btn {
-  margin-right: 190px;
+.search-form {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.search-form .btn-search-form {
+  border: none;
+  background-color: white;
+  color: $sportswap-red
+}
+
+.first-input {
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 8px;
+}
+
+.last-input {
+  border: none;
+  margin-left: 8px;
+}
+
+.first-input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.last-input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
 }
