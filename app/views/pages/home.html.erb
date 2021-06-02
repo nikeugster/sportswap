@@ -1,25 +1,3 @@
-<header>
-  <div class="hero-group">
-    <h1><strong>Sportswap!</strong></h1>
-    <h2>Find sports equipment nearby</h2>
-    <%= form_tag offers_path, method: :get, class: "search-form" do %>
-      <%= text_field_tag :equipment,
-      params[:equipment],
-      class: "search-input-field first-input",
-      placeholder: "Equipment" %>
-      <%= text_field_tag :location,
-      params[:location],
-      class: "search-input-field last-input",
-      placeholder: "Location" %>
-      <%= button_tag(type: "submit", class: "btn-search-form") do %>
-        <i class="fas fa-search"></i>
-      <% end %>
-    <% end %>
-  </div>
+<%= render "shared/header" %>
+<%= render "shared/carousel", offers: @new_offers %>
 
-  <div class="illustrations">
-    <%= image_tag("hiker-man", alt: "Colorful illustration of a man hiking", id: "hiker") %>
-    <%= image_tag("lifting", alt: "Colorful illustration of a woman lifting weights", id: "lifting") %>
-    <%= image_tag("soccer", alt: "Colorful illustration of a woman playing soccer", id: "soccer") %>
-  </div>
-</header>
