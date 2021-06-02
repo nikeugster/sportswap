@@ -1,12 +1,67 @@
-.navbar-lewagon {
+.navbar-sportswap {
   justify-content: space-between;
+  align-items: center;
   background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-sportswap .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-sportswap .logo-flex {
+  display: flex;
+  max-height: 50px;
+}
+
+.navbar-sportswap .navbar-nav {
+  align-items: center;
+}
+
+.navbar-sportswap .logo-flex .logo-flex-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  > p {
+    margin-bottom: 0;
+    margin-left: 8px;
+    padding: 0;
+    line-height: 1;
+    color: $sportswap_blue;
+  }
+}
+
+.navbar-sportswap .logo-flex > img {
+  width: 50px;
+}
+
+.search-form {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.search-form .btn-search-form {
+  border: none;
+  background-color: white;
+  color: $sportswap-red
+}
+
+.first-input {
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 8px;
+}
+
+.last-input {
+  border: none;
+  margin-left: 8px;
+}
+
+.first-input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.last-input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
 }
