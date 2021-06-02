@@ -1,1 +1,12 @@
+<h1 class="my-4" style="padding-left: 80px;">Sports Equipment in <%= params[:query] %></h1>
 
+<div class="index" style="display: flex;">
+  <div class="d-flex flex-column col-7 p-0">
+    <% @offers.each do |offer| %>
+      <%= render partial: 'shared/card-product', locals: {offer: offer} %>
+    <% end %>
+  </div>
+  <div class="index-map pl-3">
+    <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" alt="Image of search map with result tags" style='height: 100%; width: 100%; object-fit: contain'>
+  </div>
+</div>

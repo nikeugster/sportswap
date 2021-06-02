@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :offers, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   has_many :bookings_as_owner, through: :offers, source: :bookings
 end
