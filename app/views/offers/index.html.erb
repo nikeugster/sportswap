@@ -1,4 +1,16 @@
-<h1 class="my-4" style="padding-left: 80px;">Sports Equipment in <%= params[:query] %></h1>
+<%= render partial: 'shared/navbar' %>
+
+<h1 class="my-4" style="padding-left: 80px;">
+  <% if params[:equipment].present? && params[:location].present? %>
+    <%= params[:equipment].capitalize %>s in <%= params[:location].capitalize %>
+  <% elsif params[:location].present? %>
+    Sports equipment in <%= params[:location].capitalize %>
+  <% elsif @offers.empty? %>
+    No results found... %>
+  <% else %>
+    Sports equipment
+  <% end %>
+</h1>
 
 <div class="index" style="display: flex;">
   <div class="d-flex flex-column col-7 p-0">
