@@ -10,23 +10,28 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 400px;
+  height: 500px;
+  position: relative;
 }
 
 .card-carousel-img {
   width: 100%;
+  height: 100%;
 }
 
 .card-body {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+
   height: 130px;
+  width: 100%;
+  bottom: 0px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
-.card-title {
-  color: $sportswap_blue;
-}
-
-.card-text {
-  color: $sportswap_blue;
+.card-title, .card-text {
+  color: $sportswap_red;
 }
