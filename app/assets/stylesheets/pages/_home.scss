@@ -1,11 +1,21 @@
 // Specific CSS for your home-page
+.home-background {
+  background: asset-url('background.png');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .flex-container {
   display: flex;
   justify-content: center;
 }
 
 .center-container {
-  margin: 80px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
