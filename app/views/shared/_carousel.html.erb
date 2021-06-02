@@ -2,8 +2,8 @@
   <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
     <!--Controls-->
     <div class="controls-top">
-      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-circle-left"></i></a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-circle-right"></i></a>
     </div>
     <!--/.Controls-->
     <!--Indicators-->
@@ -19,8 +19,8 @@
       <div class="<%= index == 0 ? 'carousel-item active' : 'carousel-item' %>">
           <div class="row">
             <div class="col-md-4">
-              <div class="card mb-2">
-                <%= cl_image_tag offer[0].photos[0].key, width: 540, height: 360, crop: :fill, class: "card-img-top" %>
+              <div class="card-carousel mb-2">
+                <%= cl_image_tag offer[0].photos[0].key, height: 250, width: 420, crop: :fill, class: ".card-carousel-img" %>
                 <div class="card-body">
                   <h4 class="card-title"><%= offer[0].title %></h4>
                   <p class="card-text"><%= offer[0].description %></p>
@@ -29,8 +29,8 @@
               </div>
             </div>
             <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <%= cl_image_tag offer[1].photos[0].key, width: 540, height: 360, crop: :fill, class: "card-img-top" %>
+              <div class="card-carousel mb-2">
+                <%= cl_image_tag offer[1].photos[0].key, height: 250, width: 420, crop: :fill, class: "card-carousel-img" %>
                 <div class="card-body">
                   <h4 class="card-title"><%= offer[1].title %></h4>
                   <p class="card-text"><%= offer[1].description %></p>
@@ -39,8 +39,8 @@
               </div>
             </div>
             <div class="col-md-4 clearfix d-none d-md-block">
-              <div class="card mb-2">
-                <%= cl_image_tag offer[2].photos[0].key, width: 540, height: 360, crop: :fill, class: "card-img-top" %>
+              <div class="card-carousel mb-2">
+                <%= cl_image_tag offer[2].photos[0].key, height: 250, width: 420, crop: :fill, class: ".card-carousel-img" %>
                 <div class="card-body">
                   <h4 class="card-title"><%= offer[2].title %></h4>
                   <p class="card-text"><%= offer[2].description %></p>
