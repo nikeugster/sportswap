@@ -1,0 +1,47 @@
+body {
+  background: asset-url('background.png');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 160px;
+}
+
+.hero-group {
+  width: 500px;
+  margin: 140px;
+  position: relative;
+}
+
+.hero-group h1, h2 {
+  color: $sportswap_red
+}
+
+.hero-group h1 {
+  font-size: 80px;
+  margin-bottom: 24px;
+}
+
+#hiker {
+  position: absolute;
+  right: 160px;
+  top: 40px;
+}
+
+#soccer {
+  position: absolute;
+  right: 40px;
+  top: 240px;
+}
+
+#lifting {
+  position: absolute;
+  right: 300px;
+  top: 300px;
+}
