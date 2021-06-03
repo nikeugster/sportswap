@@ -1,9 +1,9 @@
 function datepicker() {
-  const startDateInput = document.getElementById('booking_start_date');
-  const endDateInput = document.getElementById('booking_end_date');
+  const startDateInput = document.getElementById('booking_starts_at');
+  const endDateInput = document.getElementById('booking_ends_at');
 
   if (startDateInput) {
-  const unavailableDates = JSON.parse(document.querySelector('#flat-booking-dates').dataset.unavailable)
+  const unavailableDates = JSON.parse(document.querySelector('#offer-booking-dates').dataset.unavailable)
   endDateInput.disabled = true
 
   flatpickr(startDateInput, {
@@ -12,8 +12,6 @@ function datepicker() {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
   });
-
-  console.log('im in the file')
 
   startDateInput.addEventListener("change", (e) => {
     if (startDateInput != "") {
