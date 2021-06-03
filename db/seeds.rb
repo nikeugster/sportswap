@@ -349,10 +349,8 @@ Have fun! :)",
   compensation_value: "40",
   user_id: sandra.id
 )
-sandra_offer_3_photo_1 = URI.open("https://images.unsplash.com/photo-1599828020722-a4fa110ec599?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
+sandra_offer_3_photo_1 = URI.open("https://images.unsplash.com/photo-1586423702505-b13505519074?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
 sandra_offer_3.photos.attach(io: sandra_offer_3_photo_1, filename: "sandra_offer_3_photo_1.jpeg", content_type: "image/jpeg")
-sandra_offer_3_photo_2 = URI.open("https://images.unsplash.com/photo-1474623809196-26c1d33457cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80")
-sandra_offer_3.photos.attach(io: sandra_offer_3_photo_2, filename: "sandra_offer_3_photo_2.jpeg", content_type: "image/jpeg")
 sandra_offer_3.save!
 
 puts "Created offer '#{sandra_offer_3.title}' of '#{sandra_offer_3.user.first_name}'"
