@@ -1,39 +1,35 @@
 <div class="container my-5">
-  <!-- <div class="row">
-    <div class="col-6"> -->
-      <h4 class="offer-subtitle mb-4">Details:</h4>
-      <%= simple_form_for(@offer, html: { class: "offer-form"}) do |f| %>
-        <%= f.input :category, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Outdoor and camping', 'Water sports', 'Team sport', 'Extreme and fun sport', 'Winter sports', 'Bicycle', 'Fishing', 'Fitness', 'Skating', 'Rackets, sticks and clubs', 'Diving', 'Horseback riding'] %>
-        <%= f.input :title, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-        <%= f.input :description, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-        <%= f.input :condition, label: "Condition of the equipment", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Very good', 'Used but okay', 'Not perfect but working', 'At your own risk'], as: :radio_buttons %>
-        <h4 class="offer-subtitle my-4">Photos:</h4>
-        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-        <%= f.input :photos, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'offer-form-upload-photo'}, label: 'Upload your photos' %>
-        <%#= f.input :photos, input_html: { class: 'd-none'}, label_html: { class: 'offer-form-upload-photo'}, label: 'Upload your photos' %>
-        <%#= f.input :photos, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input±", multiple: true } %>
-        <h4 class="offer-subtitle mt-5">Location:</h4>
-        <p class="mb-4">Please declare where the equipment is located</p>
-        <div class="offer-form-inline">
-          <%= f.input :street, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-          <%= f.input :house_no, label: "No.", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-        </div>
-        <div class="offer-form-inline">
-          <%= f.input :zip_code, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-          <%= f.input :city, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-        </div>
-        <%= f.input :country,label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-        <h4 class="offer-subtitle mt-5 mb-4">Compensation:</h4>
-        <div class="offer-form-inline mb-3">
-          <%= f.input :compensation_type, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Price per hour', 'Price per day', 'Free', 'Other'], as: :radio_buttons %>
-          <%= f.input :compensation_value, label: "Price (per hour, per day or declare other compensation)", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-        </div>
-        <%= f.button :submit, class: "offer-form-button px-5" %>
-        <%#= f.submit %>
-      <% end %>
-    <!-- </div>
-    <div class="col-4">
-      bla
+  <h4 class="offer-subtitle mb-4">Details:</h4>
+  <%= simple_form_for(@offer, html: { class: "offer-form"}) do |f| %>
+    <%= f.input :category, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Outdoor and camping', 'Water sports', 'Team sport', 'Extreme and fun sport', 'Winter sports', 'Bicycle', 'Fishing', 'Fitness', 'Skating', 'Rackets, sticks and clubs', 'Diving', 'Horseback riding'] %>
+    <%= f.input :title, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+    <%= f.input :description, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+    <%= f.input :condition, label: "Condition of the equipment", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Very good', 'Used but okay', 'Not perfect but working', 'At your own risk'], as: :radio_buttons %>
+    <h4 class="offer-subtitle my-4">Photos:</h4>
+    <div class="offer-form-inline">
+      <%= f.input :photos, input_html: { class: 'hidden', id: 'photo-input', multiple: true }, label_html: { class: 'offer-form-upload-photo mr-4'}, label: 'Upload your photos' %>
+      <%= image_tag "", class: "hidden offer-form-photo", id: "photo-preview-1" %>
+      <%= image_tag "", class: "hidden offer-form-photo", id: "photo-preview-2" %>
+      <%= image_tag "", class: "hidden offer-form-photo", id: "photo-preview-3" %>
+      <%= image_tag "", class: "hidden offer-form-photo", id: "photo-preview-4" %>
+      <%= image_tag "", class: "hidden offer-form-photo", id: "photo-preview-5" %>
     </div>
-  </div> -->
+    <h4 class="offer-subtitle mt-3">Location:</h4>
+    <p class="mb-4">Please declare where the equipment is located</p>
+    <div class="offer-form-inline">
+      <%= f.input :street, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+      <%= f.input :house_no, label: "No.", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+    </div>
+    <div class="offer-form-inline">
+      <%= f.input :zip_code, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+      <%= f.input :city, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+    </div>
+    <%= f.input :country,label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+    <h4 class="offer-subtitle mt-5 mb-4">Compensation:</h4>
+    <div class="offer-form-inline mb-3">
+      <%= f.input :compensation_type, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Price per hour', 'Price per day', 'Free', 'Other'], as: :radio_buttons %>
+      <%= f.input :compensation_value, label: "Price (per hour, per day or declare other compensation)", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+    </div>
+    <%= f.button :submit, class: "offer-form-button px-5" %>
+  <% end %>
 </div>
