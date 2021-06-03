@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 
 // Internal imports, e.g:
-import previewImage from '../components/_preview_image';
+import { previewImageOnFileSelect } from '../components/photo_preview';
 
 // import { initSelect2 } from '../components/init_select2';
 
@@ -35,7 +35,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  previewImage();
+  previewImageOnFileSelect();
 });
 
 import { initMapbox } from '../plugins/init_mapbox';

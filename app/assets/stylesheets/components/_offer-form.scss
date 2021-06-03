@@ -55,7 +55,13 @@
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
+}
+
+.offer-form-photo {
+  margin-left: 10px;
+  width: 100px;
+  object-fit: cover;
 }
 
 .offer-form-button {
