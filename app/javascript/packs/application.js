@@ -24,17 +24,21 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import flatpickr from "flatpickr";
 
 // Internal imports, e.g:
 import { previewImageOnFileSelect } from '../components/photo_preview';
 
 // import { initSelect2 } from '../components/init_select2';
+import datepicker from '../plugins/init_flatpickr'
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  previewImage();
+  datepicker();
   previewImageOnFileSelect();
 });
 
