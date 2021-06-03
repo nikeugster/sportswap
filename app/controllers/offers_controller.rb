@@ -9,8 +9,6 @@ class OffersController < ApplicationController
     else
       @offers = Offer.all
     end
-
-    raise
   end
 
   def show
