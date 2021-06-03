@@ -1,7 +1,7 @@
 <%= render partial: 'shared/navbar' %>
 
-  <h2 class="m-5" id="show-title"><%= @offer.title %></h2>
-  <div class="show-infos">
+  <h2 class="ml-5 mt-5" id="show-title"><%= @offer.title %></h2>
+  <div class="show-infos ml-5 mr-5">
     <p><%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
     <% if @offer.compensation_type == "Price per hour" %>
       <p>$ <%= @offer.compensation_value %> per hour</p>
@@ -14,11 +14,11 @@
     <% end %>
     <div class="show-profile">
       <%= cl_image_tag @offer.user.photo.key, class: "avatar" %>
-      <div class="d-flex flex-column justify-content-space-around">
-        <div class="card-avatar-info pt-2">
+      <div class="d-flex flex-column justify-content-center ml-2">
+        <div class="show-name">
           <p><%= @offer.user.first_name %></p>
         </div>
-        <div class="rating pb-2">
+        <div class="show-rating">
           <% if @offer.user.reviews.any? %>
             <% average = @offer.user.reviews.map { |review| review.rating }.sum / offer.user.reviews.length %>
             <% average.times do %>
@@ -28,14 +28,14 @@
              <i class="far fa-star"></i>
             <% end %>
           <% else %>
-            <p>no reviews yet</p>
+            <p><em>no reviews yet</em></p>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 
-<div class="center-container p-5">
+<div class="center-container pl-5 pr-5 pb-5">
   <% if @offer.photos.count == 1 %>
     <div class="gallery-single">
       <div class="gallery-main">

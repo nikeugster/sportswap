@@ -3,3 +3,24 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.show-profile {
+  display: flex;
+  align-items: center;
+}
+
+.show-name > p {
+  margin: 0;
+  padding-top: 8px;
+}
+
+.show-rating > p {
+  margin: 0;
+  font-weight: lighter;
+  padding-bottom: 8px;
+  font-size: 12px;
+}
+
+.show-infos > p {
+  font-weight: lighter;
+}
