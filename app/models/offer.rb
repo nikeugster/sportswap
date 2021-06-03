@@ -10,4 +10,14 @@ class Offer < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  def address
+    [street, house_no, zip_code, city, country].compact.join(', ')
+  end
+
+  def will_save_change_to_address?
+    will_save_change_to_street? || will_save_change_to_house_no? || will_save_change_to_zip_code? || will_save_change_to_city? || will_save_change_to_country?
+  end
 end
