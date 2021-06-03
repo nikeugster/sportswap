@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/36zOztV.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
@@ -17,7 +17,7 @@
     <div class="main-container">
         <%= yield %>
     </div>
-    
+
      <%= render 'shared/footer' %>
 
   </body>
