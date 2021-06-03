@@ -1,0 +1,10 @@
+<%= render partial: 'shared/navbar' %>
+
+<h2 class="my-4" style="padding-left: 80px;"><%= @offer.title %></h2>
+<div class="gallery" style="padding-left: 80px;">
+    <% @offer.photos.each do |photo| %>
+      <% unless photo == @offer.photos[0] %>
+        <%= cl_image_tag photo.key %>
+      <% end %>
+    <% end %>
+</div>
