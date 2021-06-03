@@ -1,4 +1,9 @@
 class BookingsController < ApplicationController
+  def new
+    @booking = Booking.new
+    @art = Art.find(params[:art_id])
+  end
+
   def create
   end
 
