@@ -1,8 +1,10 @@
 class OffersController < ApplicationController
+  before_action :set_offer, only: [:show, :edit, :update, :destroy]
+
   def index
     query = "#{params[:equipment]} #{params[:location]}"
 
-    if params[:query].present?
+    if query.present?
       @offers = Offer.search_by_title_and_location(query)
     else
       @offers = Offer.all
