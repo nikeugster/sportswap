@@ -99,15 +99,17 @@
 
 <div class="d-flex justify-content-between pl-5 pr-5" id="show-p">
   <p class="col-8"><%= @offer.description %></p>
-  <div class="col-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+
+  <div class="col-4 rent-card pl-3 pr-3" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+    <h5 id="rent-card-title">Rent <%= @offer.title %>!</h5>
     <% if current_user.nil? %>
       <p class="pending-text">Please log in to make a booking request.</p>
     <% end %>
     <% unless current_user.nil? %>
       <% if current_user.id != @offer.user_id  %>
          <%= simple_form_for([@offer, @booking]) do |f| %>
-             <%= f.input :starts_at, as: :string, type: :text %>
-             <%= f.input :ends_at, as: :string, type: :text %>
+             <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
+             <%= f.input :ends_at, label: "Dropoff:", as: :string, type: :text %>
              <%= f.submit "Book", class: "btn btn-ghost" %>
           <% end %>
       <% end %>
