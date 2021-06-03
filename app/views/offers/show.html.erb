@@ -21,5 +21,31 @@
         <% end %>
       </div>
     </div>
+  <% elsif @offer.photos.count == 3 %>
+    <div class="gallery">
+      <div class="gallery-main mr-3">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+      <div class="gallery-secondary">
+        <% @offer.photos.drop(1).each do |photo| %>
+          <div class="image-container-2">
+            <%= cl_image_tag photo.key, class: "gallery-image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% elsif @offer.photos.count == 4 %>
+    <div class="gallery">
+      <div class="gallery-main mr-3">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+      <div class="gallery-secondary-3">
+        <% @offer.photos.drop(1).each do |photo| %>
+          <div class="image-container-3">
+            <%= cl_image_tag photo.key, class: "gallery-image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
