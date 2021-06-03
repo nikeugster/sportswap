@@ -197,16 +197,12 @@ Hang loose!",
   compensation_value: "30",
   user_id: juergen.id
 )
-juergen_offer_3_photo_1 = URI.open("https://images.unsplash.com/photo-1604537466573-5e94508fd243?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80")
+juergen_offer_3_photo_1 = URI.open("https://images.unsplash.com/photo-1548332445-91561aae5ea4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3VyZmJvYXJkJTIwd2luZHN1cmZpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 juergen_offer_3.photos.attach(io: juergen_offer_3_photo_1, filename: "juergen_offer_3_photo_1.jpeg", content_type: "image/jpeg")
-juergen_offer_3_photo_2 = URI.open("https://images.unsplash.com/photo-1556213865-7d7377053e1f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2855&q=80")
+juergen_offer_3_photo_2 = URI.open("https://images.unsplash.com/photo-1562051544-c8a253660284?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3VyZmJvYXJkJTIwd2luZHN1cmZpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 juergen_offer_3.photos.attach(io: juergen_offer_3_photo_2, filename: "juergen_offer_3_photo_2.jpeg", content_type: "image/jpeg")
-juergen_offer_3_photo_3 = URI.open("https://images.unsplash.com/photo-1568846023566-072d3f1bc93b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=802&q=80")
+juergen_offer_3_photo_3 = URI.open("https://images.unsplash.com/photo-1530717449302-271006cdc1bf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d2luZHN1cmZpbmd8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 juergen_offer_3.photos.attach(io: juergen_offer_3_photo_3, filename: "juergen_offer_3_photo_3.jpeg", content_type: "image/jpeg")
-juergen_offer_3_photo_4 = URI.open("https://images.unsplash.com/photo-1578186808502-f90323c4f7a1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
-juergen_offer_3.photos.attach(io: juergen_offer_3_photo_4, filename: "juergen_offer_3_photo_4.jpeg", content_type: "image/jpeg")
-juergen_offer_3_photo_5 = URI.open("https://images.unsplash.com/photo-1555489020-a98a84149129?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80")
-juergen_offer_3.photos.attach(io: juergen_offer_3_photo_5, filename: "juergen_offer_3_photo_5.jpeg", content_type: "image/jpeg")
 juergen_offer_3.save!
 
 puts "Created offer '#{juergen_offer_3.title}' of '#{juergen_offer_3.user.first_name}'"
