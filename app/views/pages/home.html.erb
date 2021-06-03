@@ -1,3 +1,19 @@
-<%= render "shared/header" %>
-<%= render "shared/carousel", offers: @new_offers %>
+<div class="home-background">
+  <%= render "shared/header" %>
 
+  <div class="center-container">
+    <h1 class="home-header">Be the first one to rent!</h1>
+  </div>
+
+  <div class="center-container">
+    <%= render "shared/carousel", offers: @new_offers %>
+  </div>
+
+  <div class="center-container">
+    <h1 class="home-header">Select your activity!</h1>
+  </div>
+
+  <div class="center-container categories-container">
+    <%= render "shared/categories" %>
+  </div>
+</div>
