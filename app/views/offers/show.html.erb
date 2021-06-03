@@ -1,10 +1,120 @@
-<%= render partial: 'shared/navbar' %>
+<%= render 'shared/navbar' %>
 
-<h2 class="my-4" style="padding-left: 80px;"><%= @offer.title %></h2>
-<div class="gallery" style="padding-left: 80px;">
-    <% @offer.photos.each do |photo| %>
-      <% unless photo == @offer.photos[0] %>
-        <%= cl_image_tag photo.key %>
+  <h2 class="ml-5 mt-5" id="show-title"><%= @offer.title %></h2>
+  <div class="show-infos ml-5 mr-5">
+    <p><%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
+    <% if @offer.compensation_type == "Price per hour" %>
+      <p>$ <%= @offer.compensation_value %> per hour</p>
+    <% elsif @offer.compensation_type == "Price per day" %>
+      <p>$ <%= @offer.compensation_value %> per day</p>
+    <% elsif @offer.compensation_type == "Free" %>
+      <p>free</p>
+    <% elsif @offer.compensation_type == "Other" %>
+      <p><%= @offer.compensation_value %></p>
+    <% end %>
+    <div class="show-profile">
+      <%= cl_image_tag @offer.user.photo.key, class: "avatar" %>
+      <div class="d-flex flex-column justify-content-center ml-2">
+        <div class="show-name">
+          <p><%= @offer.user.first_name %></p>
+        </div>
+        <div class="show-rating">
+          <% if @offer.user.reviews.any? %>
+            <% average = @offer.user.reviews.map { |review| review.rating }.sum / offer.user.reviews.length %>
+            <% average.times do %>
+             <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - average).times do  %>
+             <i class="far fa-star"></i>
+            <% end %>
+          <% else %>
+            <p><em>no reviews yet</em></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="center-container pl-5 pr-5 pb-5">
+  <% if @offer.photos.count == 1 %>
+    <div class="gallery-single">
+      <div class="gallery-main">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+    </div>
+  <% elsif @offer.photos.count == 2 %>
+    <div class="gallery">
+      <div class="gallery-main mr-3">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+      <div class="gallery-secondary">
+        <% @offer.photos.drop(1).each do |photo| %>
+          <div class="image-container-1">
+            <%= cl_image_tag photo.key, class: "gallery-image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% elsif @offer.photos.count == 3 %>
+    <div class="gallery">
+      <div class="gallery-main mr-3">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+      <div class="gallery-secondary">
+        <% @offer.photos.drop(1).each do |photo| %>
+          <div class="image-container-2">
+            <%= cl_image_tag photo.key, class: "gallery-image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% elsif @offer.photos.count == 4 %>
+    <div class="gallery">
+      <div class="gallery-main mr-3">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+      <div class="gallery-secondary-3">
+        <% @offer.photos.drop(1).each do |photo| %>
+          <div class="image-container-3">
+            <%= cl_image_tag photo.key, class: "gallery-image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+   <% elsif @offer.photos.count == 5 %>
+    <div class="gallery">
+      <div class="gallery-main mr-3">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+      <div class="gallery-secondary">
+        <% @offer.photos.drop(1).each do |photo| %>
+          <div class="image-container-4">
+            <%= cl_image_tag photo.key, class: "gallery-image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="d-flex justify-content-between pl-5 pr-5" id="show-p">
+  <p class="col-8 p-4"><%= @offer.description %></p>
+
+  <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+    <h5 id="card-rent-title">Rent a <%= @offer.title %>!</h5>
+    <% if current_user.nil? %>
+      <p class="pending-text">Please log in to make a booking request.</p>
+    <% end %>
+    <% unless current_user.nil? %>
+      <% if current_user.id != @offer.user_id  %>
+         <%= simple_form_for([@offer, @booking]) do |f| %>
+            <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
+            <%= f.input :ends_at, label: "Dropoff:", as: :string, type: :text %>
+            <div class="card-rent-btn">
+              <%= f.submit "Book", class: "btn btn-ghost" %>
+            </div>
+          <% end %>
       <% end %>
     <% end %>
+ </div>
 </div>

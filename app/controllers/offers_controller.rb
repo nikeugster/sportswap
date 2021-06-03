@@ -19,6 +19,11 @@ class OffersController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    respond_to do |format|
+      format.html
+      format.json { render json: { arts: @arts } }
+    end
   end
 
   def new
