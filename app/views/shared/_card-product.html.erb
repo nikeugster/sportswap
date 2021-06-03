@@ -2,7 +2,9 @@
   <%= link_to offer_path(offer.id) do %>
     <div class="main-center">
       <div class="card-product col-12 p-3 mb-3">
+      <% if offer.photos.attached? %>
         <%= cl_image_tag offer.photos[0].key, id: "card-product-img" %>
+      <% end %>
         <div class="card-product-rightside">
           <div class="card-product-infos pl-3">
             <div class="card-title-location">

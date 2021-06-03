@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2021_06_03_131154) do
     t.string "zip_code"
     t.string "city"
     t.string "country"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
