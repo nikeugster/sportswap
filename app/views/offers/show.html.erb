@@ -100,8 +100,8 @@
 <div class="d-flex justify-content-between pl-5 pr-5" id="show-p">
   <p class="col-8"><%= @offer.description %></p>
 
-  <div class="col-4 rent-card pl-3 pr-3" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
-    <h5 id="rent-card-title">Rent <%= @offer.title %>!</h5>
+  <div class="card-rent col-4 pl-3 pr-3" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+    <h5 id="card-rent-title">Rent a <%= @offer.title %>!</h5>
     <% if current_user.nil? %>
       <p class="pending-text">Please log in to make a booking request.</p>
     <% end %>
