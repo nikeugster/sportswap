@@ -16,6 +16,11 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "last name" }%>
+    <%= f.input :photo,
+                as: :file,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Avatar" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
