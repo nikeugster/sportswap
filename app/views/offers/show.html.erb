@@ -47,5 +47,18 @@
         <% end %>
       </div>
     </div>
+   <% elsif @offer.photos.count == 5 %>
+    <div class="gallery">
+      <div class="gallery-main mr-3">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+      <div class="gallery-secondary">
+        <% @offer.photos.drop(1).each do |photo| %>
+          <div class="image-container-4">
+            <%= cl_image_tag photo.key, class: "gallery-image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
