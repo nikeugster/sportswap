@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to dashboard_path, notice: "You've successfully made a booking inquiry for '#{@offer.title}' from #{@offer.user.first_name}."
     else
-      render :new
+      redirect_to offer_path(@offer)
     end
   end
 
