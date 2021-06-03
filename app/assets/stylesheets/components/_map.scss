@@ -1,17 +1,7 @@
 .index-map {
   padding-right: 80px;
   position: sticky;
-  top: 24px;
+  top: 0;
   height: 100%;
   z-index: 100;
-}
-
-.index-map img {
-  object-fit: contain;
-  border-radius: 5px;
-}
-
-#map {
-  position: sticky;
-  top: 24px;
 }

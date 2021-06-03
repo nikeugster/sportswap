@@ -20,12 +20,16 @@
       <%= render partial: 'shared/card-product', locals: {offer: offer} %>
     <% end %>
   </div>
-  <%# <div class="index-map pl-3"> %>
+  <div class="index-map d-flex col-5 pl-3 pb-3">
     <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      style="
+        height: 100vh;
+        width: 100vw;
+        border-radius: 5px;
+        "
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  <%# </div> %>
+  </div>
 
 </div>
