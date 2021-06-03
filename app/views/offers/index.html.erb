@@ -1,12 +1,14 @@
 <%= render 'shared/navbar' %>
 
 <h1 class="my-4" style="padding-left: 80px;">
-  <% if params[:equipment].present? && params[:location].present? %>
+  <% if @offers.empty? %>
+    No results found...
+  <% elsif params[:equipment].present? && params[:location].present? %>
     <%= params[:equipment].capitalize %>s in <%= params[:location].capitalize %>
   <% elsif params[:location].present? %>
     Sports equipment in <%= params[:location].capitalize %>
-  <% elsif @offers.empty? %>
-    No results found...
+  <% elsif params[:equipment].present? %>
+     <%= params[:equipment].capitalize %>s
   <% else %>
     Sports equipment
   <% end %>
@@ -18,7 +20,12 @@
       <%= render partial: 'shared/card-product', locals: {offer: offer} %>
     <% end %>
   </div>
-  <div class="index-map pl-3">
-    <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80" alt="Image of search map with result tags" style='height: 100%; width: 100%; object-fit: contain'>
-  </div>
+  <%# <div class="index-map pl-3"> %>
+    <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  <%# </div> %>
+
 </div>

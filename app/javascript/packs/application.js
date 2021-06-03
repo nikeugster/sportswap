@@ -30,8 +30,16 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 
 // import { initSelect2 } from '../components/init_select2';
 
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   previewImageOnFileSelect();
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
