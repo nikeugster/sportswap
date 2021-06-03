@@ -1,5 +1,28 @@
 // Specific CSS for your home-page
+.home-background {
+  background: asset-url('background.png');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .flex-container {
   display: flex;
   justify-content: center;
+}
+
+.center-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.center-container h1 {
+  color: $sportswap_red;
+}
+
+.home-header {
+  margin-top: 40px;
 }

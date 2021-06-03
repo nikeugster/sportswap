@@ -1,0 +1,27 @@
+.card-category {
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  color: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $sportswap_red;
+}
+
+.card-category-icon {
+  font-size: 70px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $sportswap_red;
+}
