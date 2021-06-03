@@ -1,0 +1,81 @@
+.offer-subtitle {
+  color: $sportswap-blue;
+}
+
+.offer-label {
+  color: $sportswap-blue;
+}
+
+.offer-form-input {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.offer-form-inline {
+  display: flex;
+}
+
+.offer_street {
+  flex-grow: 4;
+  margin-right: 10px;
+}
+
+.offer_city {
+  flex-grow: 4;
+  margin-left: 10px;
+}
+
+.offer_compensation_type {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.offer_compensation_value {
+  flex-grow: 3;
+}
+
+.offer-form-upload-photo {
+  color: $sportswap-red;
+  background-color: white;
+  border: 2px solid $sportswap-red;
+  padding: 6px 24px;
+  border-radius: 5px;
+  font-weight: light;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.offer-form-upload-photo:hover {
+  opacity: 1;
+  color: $sportswap-red;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.offer-form-button {
+  color: $sportswap-red;
+  background-color: white;
+  border: 2px solid $sportswap-red;
+  padding: 6px 24px;
+  border-radius: 5px;
+  font-weight: light;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.offer-form-button:hover {
+  opacity: 1;
+  color: $sportswap-red;
+}
+
+.col-form-label {
+  color: $sportswap-blue;
+}
