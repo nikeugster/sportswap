@@ -74,7 +74,11 @@ chrissie_offer_1 = Offer.new(
 While it may not be the newest and best looking canoe I can assure you it works like a charm. The paddles are in good condition as well. One of the paddles broke at the very top once but it got fixed with epoxy resin, so don't worry, it won't break again, I promise.
 Feel free to send me a message if you have any other questions!
 Also, please send me pictures from your adventure with my canoe, I would love to see where it has been ;).",
-  location: "Fürstenwalder Damm 838, 12589 Berlin",
+  street: "Fürstenwalder Damm",
+  house_no: "838",
+  zip_code: "12589",
+  city: "Berlin",
+  country: "Germany",
   compensation_type: "Price per day",
   compensation_value: "10",
   user_id: chrissie.id
@@ -102,7 +106,11 @@ I will be out of town for a while and I think it won't be of any use to me or my
 So please, save it from a boring life hidden away in my basement!
 As you can tell from the pictures the bicycle is in a very good condition and holds a very dear place in my heart, so please take good care of it.
 Feel free to send me a message if you have any other questions!",
-  location: "Oranienstraße 57, 10969 Berlin",
+  street: "Oranienstraße",
+  house_no: "57",
+  zip_code: "10969",
+  city: "Berlin",
+  country: "Germany",
   compensation_type: "Price per hour",
   compensation_value: "5",
   user_id: chrissie.id
@@ -127,7 +135,11 @@ chrissie_offer_3 = Offer.new(
 As you can see it is not the newest, hottest model and generally more suited for beginners that want to try out snowboarding.
 It's a rather short board so it should also suit people well that aren't necessarily as tall as me. It has it's quirks though, especially the right binding needs a gentle bit of force to fully close, but nothing to be worried about!
 Just send me a dm if you want to know more about the board!",
-  location: "Oranienstraße 53, 10969 Berlin",
+  street: "Oranienstraße",
+  house_no: "53",
+  zip_code: "10969",
+  city: "Berlin",
+  country: "Germany",
   compensation_type: "Free",
   compensation_value: "Free",
   user_id: chrissie.id
@@ -151,7 +163,11 @@ I'm offering my backup surf fishing rod for rental since I've recently been more
 It's a pretty solid, carbon Trio Rex Surf Rod that is pretty light given its length. It comes with all the Okuma luxury you can think of: easy grip connection, a nice bag and its resistant to salt water.
 The spinning reel is a Trio Rex Salt Spinning Reel, so it won't jam even after a long day in or near the waters.
 Have fun!",
-  location: "Ballindamm 13, 20095 Hamburg",
+  street: "Ballindamm",
+  house_no: "13",
+  zip_code: "20095",
+  city: "Hamburg",
+  country: "Germany",
   compensation_type: "Price per day",
   compensation_value: "55",
   user_id: juergen.id
@@ -172,7 +188,11 @@ juergen_offer_2 = Offer.new(
 Want to spend a nice weekend on the beautiful coast of the baltic sea? Don't wanna rent an expensive van or even a camper? Well, why not take my tent!
 It has always been a good companion of mine and even survived a major battering during a crazy snowstorm in Nepal. This also is the reason why it isn't in the most perfect condition anymore, to say mildly. I don't wanna just throw it away though.
 May it serve you well on your next adventure!",
-  location: "Ballindamm 13, 20095 Hamburg",
+  street: "Ballindamm",
+  house_no: "13",
+  zip_code: "20095",
+  city: "Hamburg",
+  country: "Germany",
   compensation_type: "Other",
   compensation_value: "Sixpack of beer",
   user_id: juergen.id
@@ -192,7 +212,11 @@ I proudly present to you: My old fanatic shark 135, the perfect board for people
 Its a pretty big board that will provide a stable base for you to practice your moves on, or go fast on calm waters - if you are an experienced surfers.
 While it isn't the newest board anymore I always took great care of it - and hope you will as well - so it is still in great condition. Sometimes the power joint (the thing where the sail connects) needs a bit of force to come loose if you want to move it around a bit, just make sure to tighten it up again! :D
 Hang loose!",
-  location: "Ellenbogen, 25980 List",
+  street: "Ellenbogen",
+  house_no: "",
+  zip_code: "25980",
+  city: "List",
+  country: "Germany",
   compensation_type: "Price per day",
   compensation_value: "30",
   user_id: juergen.id
@@ -220,7 +244,11 @@ Want to become the next windsurfing freestyle god of Sylt? Well, fear not, for m
 Its a freestyle wave / wave sail that suits beginners just as well as intermediate surfers.
 It is in great condition and has 4.2m². It comes with a mast and boom included, though the boom isn't in as good of a shape as the sail, it will still definitely do and withstand even the fiercest of winds! ;)
 Hang loose!",
-  location: "Am Hafen 28, 25992 List",
+  street: "Am Hafen",
+  house_no: "28",
+  zip_code: "25992",
+  city: "List",
+  country: "Germany",
   compensation_type: "Price per hour",
   compensation_value: "10",
   user_id: juergen.id
@@ -246,7 +274,11 @@ It offers space for up to four people overnight and comes with a kitchen that ha
 Did I mention the beer holder next to the ship's wheel?
 Have fun!
 Please only open a booking request if you are an experienced sailor and have a license.",
-  location: "Seestraße 13, 18439 Stralsund",
+  street: "Seestraße",
+  house_no: "13",
+  zip_code: "18439",
+  city: "Stralsund",
+  country: "Germany",
   compensation_type: "Price per hour",
   compensation_value: "80",
   user_id: julian.id
@@ -270,7 +302,11 @@ julian_offer_2 = Offer.new(
   description: "A Club so good, I am tempted to give you a whole-in-one guarantee.
 Feeling like you can't drive the ball the way you want to? Well, the Callaway X Hot Fairway is made out of Carpenter 455 stainless steel for a reason. Being 40 percent thinner, with a 90 percent larger sweet spot jam, it produces a significantly hotter response all over the face, providing superior launch conditions.
 Become the next Tiger Woods!",
-  location: "Golfweg 22, 14109 Berlin",
+  street: "Golfweg",
+  house_no: "22",
+  zip_code: "14109",
+  city: "Berlin",
+  country: "Germany",
   compensation_type: "Price per day",
   compensation_value: "19",
   user_id: julian.id
@@ -295,7 +331,11 @@ You are more than welcome to take my Chaya Rubies for a spin and you will probab
 They have some marks on them and could use some new bearings, but nothing that will slow you down too much.
 If you have some more questions about the skates, or Roller Derby, just send me message, I'm more than happy to answer.
 Ride fast!",
-  location: "Landwehrstraße 46, 80336 München",
+  street: "Landwehrstraße",
+  house_no: "46",
+  zip_code: "80336",
+  city: "München",
+  country: "Germany",
   compensation_type: "Price per day",
   compensation_value: "12",
   user_id: sandra.id
@@ -317,7 +357,11 @@ I will sadly not make it into the mountains this season, but it would be too muc
 The board is in fantastic condition as you can see and my absolute favorite. The engineers at Salomon really knocked this one out of the park: It has a Backseat Camber to give you more control and improve flotation in deeper snow, as well as a Quadratic Sidecut.
 It is so snappy, especially in deeper snow, you will fall in love, I can guarantee you that much.
 Please do not take it into a snow park though and don't do any grinding with it - it wont't be fun because of the camber anyhow and will just ruin the board :D",
-  location: "Landwehrstraße 46, 80336 München",
+  street: "Landwehrstraße",
+  house_no: "46",
+  zip_code: "80336",
+  city: "München",
+  country: "Germany",
   compensation_type: "Price per day",
   compensation_value: "40",
   user_id: sandra.id
@@ -344,7 +388,11 @@ sandra_offer_3 = Offer.new(
 I will sadly not be able to go skydiving this season but since I see way too many people in extreme sports not wearing helmets, I still wanted to give you the chance to try out my Cookie G3. It also suits itself for other activities such as downhill longboarding and the such.
 It has never seen a major crash (knock on wood) but has some light marks and a scratch down at the right side of the visor, but nothing too much out of the ordinary.
 Have fun! :)",
-  location: "Unnamed Road, 82547 Eurasburg",
+  street: "Sprengenöd",
+  house_no: "1",
+  zip_code: "82547",
+  city: "Eurasburg",
+  country: "Germany",
   compensation_type: "Price per day",
   compensation_value: "40",
   user_id: sandra.id

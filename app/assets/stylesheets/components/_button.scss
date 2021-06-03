@@ -1,6 +1,6 @@
 .btn-ghost {
-  color: #EF767A;
-  border: 2px solid #EF767A;
+  color: $sportswap-red;
+  border: 2px solid $sportswap-red;
   padding: 6px 24px;
   border-radius: 5px;
   font-weight: light;
@@ -10,5 +10,5 @@
 
 .btn-ghost:hover {
   opacity: 1;
-  color: #EF767A;
+  color: $sportswap-red;
 }
