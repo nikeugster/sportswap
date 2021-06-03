@@ -23,7 +23,7 @@
                 <%= cl_image_tag offer[0].photos[0].key, height: 500, width: 420, crop: :fill, class: ".card-carousel-img" %>
                 <div class="card-body">
                   <h4 class="card-title"><%= offer[0].title %></h4>
-                  <p class="card-text"><strong><%= offer[0].location %></strong></p>
+                  <p class="card-text">In <strong><%= offer[0].city %></strong></p>
                 </div>
               </div>
             </div>
@@ -32,7 +32,7 @@
                 <%= cl_image_tag offer[1].photos[0].key, height: 500, width: 420, crop: :fill, class: "card-carousel-img" %>
                 <div class="card-body">
                   <h4 class="card-title"><%= offer[1].title %></h4>
-                  <p class="card-text"><strong><%= offer[1].location %></strong></p>
+                  <p class="card-text">In <strong><%= offer[1].city %></strong></p>
                 </div>
               </div>
             </div>
@@ -41,7 +41,7 @@
                 <%= cl_image_tag offer[2].photos[0].key, height: 500, width: 420, crop: :fill, class: ".card-carousel-img" %>
                 <div class="card-body">
                   <h4 class="card-title"><%= offer[2].title %></h4>
-                  <p class="card-text"><strong><%= offer[2].location %></strong></p>
+                  <p class="card-text">In <strong><%= offer[2].city %></strong></p>
                 </div>
               </div>
             </div>
