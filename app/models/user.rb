@@ -12,5 +12,5 @@ class User < ApplicationRecord
 
   has_many :bookings_as_owner, through: :offers, source: :bookings
 
-  validates :photo, :first_name, :last_name
+  validates :photo, :first_name, :last_name, presence: true
 end

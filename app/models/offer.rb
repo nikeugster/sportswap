@@ -15,6 +15,7 @@ class Offer < ApplicationRecord
   def unavailable_dates
     bookings.pluck(:starts_at, :ends_at).map do |range|
       { from: range[0], to: range[1] }
+    end
   end
 
   geocoded_by :address
