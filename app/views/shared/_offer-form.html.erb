@@ -28,7 +28,7 @@
     <h4 class="offer-subtitle mt-5 mb-4">Compensation:</h4>
     <div class="offer-form-inline mb-3">
       <%= f.input :compensation_type, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Price per hour', 'Price per day', 'Free', 'Other'], as: :radio_buttons %>
-      <%= f.input :compensation_value, label: "Price (per hour, per day or declare other compensation)", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+      <%= f.input :compensation_value, label: "Price (per hour, per day or declare other compensation):", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
     </div>
     <%= f.button :submit, class: "offer-form-button px-5" %>
   <% end %>
