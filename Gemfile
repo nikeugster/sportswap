@@ -36,6 +36,8 @@ gem 'country_select', '~> 4.0'
 
 gem 'devise'
 
+gem 'flatpickr'
+
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
