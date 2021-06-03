@@ -8,7 +8,7 @@
         <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
       </div>
     </div>
-  <% else %>
+  <% elsif @offer.photos.count == 2 %>
     <div class="gallery">
       <div class="gallery-main mr-3">
         <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
