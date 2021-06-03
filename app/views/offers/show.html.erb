@@ -1,10 +1,25 @@
 <%= render partial: 'shared/navbar' %>
 
-<h2 class="my-4" style="padding-left: 80px;"><%= @offer.title %></h2>
-<div class="gallery" style="padding-left: 80px;">
-    <% @offer.photos.each do |photo| %>
-      <% unless photo == @offer.photos[0] %>
-        <%= cl_image_tag photo.key %>
-      <% end %>
-    <% end %>
+<div class="center-container p-5">
+  <h2 class="m-3"><%= @offer.title %></h2>
+  <% if @offer.photos.count == 1 %>
+    <div class="gallery-single">
+      <div class="gallery-main">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+    </div>
+  <% else %>
+    <div class="gallery">
+      <div class="gallery-main mr-3">
+        <%= cl_image_tag @offer.photos[0].key, class: "gallery-main-image" %>
+      </div>
+      <div class="gallery-secondary">
+        <% @offer.photos.drop(1).each do |photo| %>
+          <div class="image-container-1">
+            <%= cl_image_tag photo.key, class: "gallery-image" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>
