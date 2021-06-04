@@ -1,22 +1,20 @@
-<div class="home-background">
-  <%= render 'shared/navbar-home' %>
-  <%= render "shared/header" %>
+<%= render 'shared/navbar-home' %>
+<%= render "shared/header" %>
 
+<div class="center-container">
+  <h1 class="home-header">Be the first one to rent!</h1>
+</div>
+
+<% if Offer.count >= 6 %>
   <div class="center-container">
-    <h1 class="home-header">Be the first one to rent!</h1>
+    <%= render "shared/carousel", offers: @new_offers %>
   </div>
+<% end %>
 
-  <% if Offer.count >= 6 %>
-    <div class="center-container">
-      <%= render "shared/carousel", offers: @new_offers %>
-    </div>
-  <% end %>
+<div class="center-container">
+  <h1 class="home-header">Select your activity!</h1>
+</div>
 
-  <div class="center-container">
-    <h1 class="home-header">Select your activity!</h1>
-  </div>
-
-  <div class="center-container categories-container">
-    <%= render "shared/categories" %>
-  </div>
+<div class="center-container categories-container">
+  <%= render "shared/categories" %>
 </div>
