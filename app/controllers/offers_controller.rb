@@ -2,10 +2,10 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    query = "#{params[:equipment]} #{params[:location]}"
+    query = "#{params[:equipment]} #{params[:location]} #{params[:category]}"
 
     if query.present?
-      @offers = Offer.search_by_title_and_location(query)
+      @offers = Offer.search_by_title_and_location_and_category(query)
     else
       @offers = Offer.all
     end

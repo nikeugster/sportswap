@@ -25,3 +25,9 @@
   padding-bottom: 40px;
   border-bottom: 1px solid $sportswap_red;
 }
+
+.category-link a {
+  &:hover {
+    text-decoration: none;
+  }
+}
