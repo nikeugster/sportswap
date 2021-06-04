@@ -85,3 +85,10 @@
 .last-input::placeholder {
   color: rgba(0, 0, 0, 0.2);
 }
+
+.logo-flex{
+  color: $sportswap-red;
+  h3 {
+    margin: 0;
+  }
+}
