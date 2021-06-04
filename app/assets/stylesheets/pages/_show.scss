@@ -81,10 +81,15 @@
 .show-header-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .show-title {
   display: flex;
+  align-items: center;
+  h2 {
+    margin: 0;
+  }
 }
 
 .show-icons {
@@ -94,7 +99,7 @@
 .show-icon {
   color: $sportswap_red;
   opacity: 0.7;
-  font-size: 32px;
+  font-size: 24px;
   &:hover {
     opacity: 1;
   }
