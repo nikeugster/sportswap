@@ -8,3 +8,60 @@ h1 {
   border-radius: 5px;
   text-align: left;
 }
+
+.messages-container {
+  display: flex;
+}
+
+.dashboard-card-message {
+
+}
+
+.dashboard-card-status {
+
+}
+
+.btn-cancelbooking {
+  color: $sportswap-red;
+  border: 2px solid $sportswap-red;
+  padding: 6px 24px;
+  border-radius: 5px;
+  font-weight: light;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-cancelbooking:hover {
+  opacity: 1;
+  color: $sportswap-red;
+}
+
+.btn-decline {
+  color: $sportswap-red;
+  border: 2px solid $sportswap-red;
+  padding: 6px 24px;
+  border-radius: 5px;
+  font-weight: light;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-decline:hover {
+  opacity: 1;
+  color: $sportswap-red;
+}
+
+.btn-accept {
+  color: $sportswap-red;
+  border: 2px solid $sportswap-red;
+  padding: 6px 24px;
+  border-radius: 5px;
+  font-weight: light;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-accept:hover {
+  opacity: 1;
+  color: $sportswap-red;
+}
