@@ -6,8 +6,11 @@ header {
 
 .hero-group {
   width: 500px;
-  margin: 140px;
+  margin: 200px 140px 120px 140px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-group h1, h2 {
@@ -21,18 +24,18 @@ header {
 
 #hiker {
   position: absolute;
-  right: 160px;
+  right: 200px;
   top: 100px;
 }
 
 #soccer {
   position: absolute;
-  right: 40px;
+  right: 90px;
   top: 300px;
 }
 
 #lifting {
   position: absolute;
-  right: 300px;
-  top: 360px;
+  right: 360px;
+  top: 400px;
 }

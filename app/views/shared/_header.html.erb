@@ -2,7 +2,7 @@
   <div class="hero-group">
     <h1><strong>Sportswap!</strong></h1>
     <h2>Find sports equipment nearby</h2>
-    <%= form_tag offers_path, method: :get, class: "search-form search-header" do %>
+    <%= form_tag offers_path, method: :get, class: "search-form mt-3" do %>
       <%= text_field_tag :equipment,
       params[:equipment],
       class: "search-input-field first-input",
