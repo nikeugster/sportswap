@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @offers = Offer.all
   end
 end
