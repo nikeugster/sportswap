@@ -20,6 +20,42 @@
             <div class="card-description">
                 <p><%= offer.description[0..100] %>...</p>
             </div>
+            <div class="profile pt-2">
+<!--               <div class="messages-container">
+                <div class="dashboard-card-message"> -->
+                <% if current_user.bookings_as_owner.count.positive? %>
+                  <h2>Pending booking requests:</h2>
+                <% else %>
+                  <h2> No pending bookings.</h2>
+                <% end %>
+<!--                 </div>
+                <div class="dashboard-card-status"> -->
+                  <% current_user.bookings_as_owner.each do |booking| %>
+                    <% if booking.accepted && booking.offer_id == offer.id %>
+                      <div class="card-dashboard-booking-accepted">
+                        <div class="card-dashboard-booking-details-text">
+                          <p class="success-text"><i class="fas fa-check"></i> Booking accepted! Art will be at <%= booking.user.first_name %> <%= booking.user.last_name %>'s place from <%= booking.starts_at %> to <%= booking.ends_at %>.</p>
+                        </div>
+                        <div class="card-dashboard-booking-details-buttons">
+                          <%= link_to "Cancel booking", booking_path(booking), method: :delete, class: "btn-cancelbooking" %>
+                        </div>
+                      </div>
+                    <% elsif booking.offer_id == offer.id %>
+                      <div class="card-dashboard-open-bookings">
+                        <div class="card-dashboard-booking-details-text">
+                          <p><%= booking.user.first_name %><%= booking.user.last_name %> wants to rent <%= offer.title %></p>
+                          <p>from: <%= booking.starts_at %> to: <%= booking.ends_at %></p>
+                        </div>
+                        <div class="card-dashboard-booking-details-buttons">
+                          <%= link_to "Decline", booking_path(booking), method: :delete, class: "btn-decline" %>
+                          <%= link_to "Accept", booking_accept_path(booking), class: "btn-accept" %>
+                        </div>
+                      </div>
+                    <% end %>
+                  <% end %>
+          <!--       </div>
+              </div> -->
+            </div>
           </div>
         </div>
       </div>

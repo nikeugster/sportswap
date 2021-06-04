@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
 
+    get 'bookings/:id', to: 'bookings#accept'
+  patch 'bookings/:id', to: 'bookings#accept', as: :booking_accept
+
   resources :bookings, only: [:update, :destroy]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
