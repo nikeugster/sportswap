@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 
-<h1 class="my-4" style="padding-left: 80px;">
+<h3 class="my-4" style="padding-left: 80px;">
   <% if @offers.empty? %>
     No results found...
   <% elsif params[:equipment].present? && params[:location].present? %>
@@ -12,7 +12,7 @@
   <% else %>
     Sports equipment
   <% end %>
-</h1>
+</h3>
 
 <div class="index" style="display: flex;">
   <div class="d-flex flex-column col-7 p-0">
