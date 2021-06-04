@@ -78,7 +78,36 @@
   }
 }
 
+.show-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.show-title {
+  display: flex;
+  align-items: center;
+  h2 {
+    margin: 0;
+  }
+}
+
+.show-icons {
+  position: relative;
+}
+
+.show-icon {
+  color: $sportswap_red;
+  opacity: 0.7;
+  font-size: 24px;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.show-icon-back {
+  margin-right: 16px;
+}
 
 
 

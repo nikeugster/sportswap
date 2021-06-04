@@ -53,7 +53,11 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
+<<<<<<< HEAD
     redirect_to offers_path
+=======
+    redirect_to dashboard_path
+>>>>>>> master
   end
 
   private
