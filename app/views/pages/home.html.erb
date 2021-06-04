@@ -6,9 +6,11 @@
     <h1 class="home-header">Be the first one to rent!</h1>
   </div>
 
-  <div class="center-container">
-    <%= render "shared/carousel", offers: @new_offers %>
-  </div>
+  <% if Offer.count >= 6 %>
+    <div class="center-container">
+      <%= render "shared/carousel", offers: @new_offers %>
+    </div>
+  <% end %>
 
   <div class="center-container">
     <h1 class="home-header">Select your activity!</h1>
