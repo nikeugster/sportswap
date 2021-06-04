@@ -1,0 +1,41 @@
+.search-form {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-radius: 5px;
+  background-color: white;
+  max-width: fit-content;
+}
+
+.search-form .btn-search-form {
+  border: none;
+  background-color: white;
+  color: $sportswap-red
+}
+
+.first-input {
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: 8px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.last-input {
+  border: none;
+  margin-left: 8px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.first-input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.last-input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  &:focus {
+    outline: none;
+  }
+}
