@@ -44,9 +44,16 @@ class OffersController < ApplicationController
   end
 
   def update
+    if @offer.update(offer_params)
+      redirect_to offer_path(@offer)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @offer.destroy
+    redirect_to dashboard_path
   end
 
   private
