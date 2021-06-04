@@ -1,6 +1,6 @@
 <%= render 'shared/navbar' %>
 
-<h1 class="my-4" style="padding-left: 80px;">
+<h1 class="ml-5 mb-3 mt-3">
   <% if @offers.empty? %>
     No results found...
   <% elsif params[:equipment].present? && params[:location].present? %>
@@ -8,7 +8,7 @@
   <% elsif params[:location].present? %>
     Sports equipment in <%= params[:location].capitalize %>
   <% elsif params[:equipment].present? %>
-     <%= params[:equipment].capitalize %>s
+     <%= params[:equipment].capitalize.pluralize %>
   <% else %>
     Sports equipment
   <% end %>
