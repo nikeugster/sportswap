@@ -24,3 +24,15 @@ h1 {
 .dashboard-pending-text {
   color: $yellow;
 }
+
+.card-dashboard-open-bookings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-dashboard-rentals-infos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
