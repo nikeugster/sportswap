@@ -16,13 +16,15 @@
                 <p class="card-tag"><%= booking.offer.condition %></p>
               </div>
             </div>
+            <h2></h2>
             <% case booking.status %>
             <% when "pending" %>
-              <p><%= booking.offer.user.first_name %></p>
+              <p class="dashboard-pending-text"><%= booking.offer.user.first_name %> is still reviewing your request...</p>
             <% when "accepted" %>
-              <p><%= booking.offer.user.first_name %> accepted</p>
+              <p class="dashboard-accepted-text"><%= booking.offer.user.first_name %> accepted your booking request!</p>
+              <p class="dashboard-accepted-text">He is now sharing "<%= booking.offer.title %>" with you from <%= booking.starts_at %> to <%= booking.ends_at %></p>
             <% when "declined" %>
-              <p><%= booking.offer.user.first_name %> declined</p>
+              <p class="dashboard-declined-text"><%= booking.offer.user.first_name %> declined your request...</p>
             <% end %>
             <div class="profile pt-2">
               <%= cl_image_tag booking.offer.user.photo.key, class: "avatar" %>
