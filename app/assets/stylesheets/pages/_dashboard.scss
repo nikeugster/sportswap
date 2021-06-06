@@ -3,18 +3,9 @@ h1 {
   font-size: 30px;
 }
 
-.dashboard-card {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  text-align: left;
-}
-
-.messages-container {
-  display: flex;
-}
-
 .dashboard-accepted-text {
   color: $green;
+  margin: 0;
 }
 
 .dashboard-declined-text {
@@ -28,6 +19,12 @@ h1 {
 .card-dashboard-open-bookings {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-dashboard-overflow-section {
+  height: 80px;
+  overflow: auto;
 }
 
 .card-dashboard-rentals-infos {

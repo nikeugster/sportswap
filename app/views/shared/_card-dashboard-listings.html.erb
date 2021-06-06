@@ -21,6 +21,7 @@
           <% else %>
             <h2 class="mt-3">No booking requests.</h2>
           <% end %>
+          <div class="card-dashboard-overflow-section">
           <% current_user.bookings_as_owner.each do |booking| %>
             <% if booking.offer_id == offer.id && booking.status == "pending" %>
               <div class="card-dashboard-open-bookings">
@@ -43,6 +44,7 @@
               <p class="dashboard-declined-text"><i class="fas fa-times"></i></i> You have declined <%= booking.user.first_name %>'s booking request from: <%= booking.starts_at %> to: <%= booking.ends_at %></p>
             <% end %>
           <% end %>
+          </div>
         </div>
       </div>
     </div>
