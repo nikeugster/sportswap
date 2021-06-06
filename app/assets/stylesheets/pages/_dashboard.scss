@@ -15,21 +15,3 @@ h1 {
 .dashboard-pending-text {
   color: $yellow;
 }
-
-.card-dashboard-open-bookings {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.card-dashboard-overflow-section {
-  height: 80px;
-  overflow: auto;
-}
-
-.card-dashboard-rentals-infos {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}

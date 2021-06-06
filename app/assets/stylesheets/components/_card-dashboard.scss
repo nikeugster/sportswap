@@ -1,1 +1,72 @@
+.card-dashboard {
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+}
 
+.card-dashboard a {
+  width: 50%;
+  text-decoration: none;
+  color: black;
+}
+
+.card-dashboard h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-dashboard p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-dashboard-image {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-dashboard-open-bookings {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-dashboard-overflow-section {
+  height: 144px;
+  overflow: auto;
+}
+
+.card-dashboard-rentals-infos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-dashboard-infos-left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.card-dashboard-product-rightside {
+  width: 50%;
+}
+
+.card-dashboard-booking-section {
+  width: 50%;
+}
+
+.card-dashboard-booking-details-buttons {
+  font-size: 30px;
+}
