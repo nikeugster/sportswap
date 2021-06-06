@@ -26,6 +26,7 @@ class BookingsController < ApplicationController
     when "declined" then @booking.status = "declined"
     end
     @booking.save
+    redirect_to dashboard_path
   end
 
   def destroy

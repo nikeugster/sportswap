@@ -16,28 +16,32 @@
                 <p class="card-tag"><%= offer.condition %></p>
               </div>
             </div>
-            <div class="profile pt-2">
+            <div class="messages-container pt-2">
               <% if offer.bookings.present? %>
-                <h5>Open booking requests:</h5>
+                <h2>Open booking requests:</h2>
               <% else %>
-                <h5>No booking requests.</h5>
+                <h2>No booking requests.</h2>
               <% end %>
               <% current_user.bookings_as_owner.each do |booking| %>
-                <% if booking.offer_id == offer.id %>
+                <% if booking.offer_id == offer.id && booking.status == "pending" %>
                   <div class="card-dashboard-open-bookings">
                     <div class="card-dashboard-booking-details-text">
                       <p><%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent <%= offer.title %></p>
                       <p>from: <%= booking.starts_at %> to: <%= booking.ends_at %></p>
                     </div>
                     <div class="card-dashboard-booking-details-buttons">
-                      <%= link_to booking_path(booking, "declined"), method: :patch do %>
+                      <%= link_to booking_path(booking, "declined"), method: :patch, remote: true do %>
                         <i class="far fa-times-circle"></i>
                       <% end %>
-                      <%= link_to booking_path(booking, "accepted"), method: :patch do %>
+                      <%= link_to booking_path(booking, "accepted"), method: :patch, remote: true do %>
                         <i class="far fa-check-circle"></i>
                       <% end %>
                     </div>
                   </div>
+                <% elsif booking.offer_id == offer.id && booking.status == "accepted" %>
+                  <p class="dashboard-accepted-text"><i class="fas fa-check"></i> You have accepted <%= booking.user.first_name %>'s booking request from: <%= booking.starts_at %> to: <%= booking.ends_at %></p>
+                <% elsif booking.offer_id == offer.id && booking.status == "declined" %>
+                  <p class="dashboard-declined-text"><i class="fas fa-times"></i></i> You have declined <%= booking.user.first_name %>'s booking request from: <%= booking.starts_at %> to: <%= booking.ends_at %></p>
                 <% end %>
               <% end %>
             </div>

@@ -15,11 +15,15 @@
                 <p class="card-tag"><%= booking.offer.category %></p>
                 <p class="card-tag"><%= booking.offer.condition %></p>
               </div>
-              <p class="card-tag-invisible"><%#= offer.location %></p>
             </div>
-            <div class="card-description">
-                <p><%= booking.offer.description[0..100] %>...</p>
-            </div>
+            <% case booking.status %>
+            <% when "pending" %>
+              <p><%= booking.offer.user.first_name %></p>
+            <% when "accepted" %>
+              <p><%= booking.offer.user.first_name %> accepted</p>
+            <% when "declined" %>
+              <p><%= booking.offer.user.first_name %> declined</p>
+            <% end %>
             <div class="profile pt-2">
               <%= cl_image_tag booking.offer.user.photo.key, class: "avatar" %>
               <div class="d-flex flex-column justify-content-space-around">
