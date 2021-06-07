@@ -9,8 +9,10 @@ function datepicker() {
   flatpickr(startDateInput, {
     minDate: "today",
     disable: unavailableDates,
+    time_24hr: true,
     enableTime: true,
-    dateFormat: "Y-m-d H:i",
+    defaultHour: 8,
+    dateFormat: "D. d.m.Y at H:i",
   });
 
   startDateInput.addEventListener("change", (e) => {
@@ -20,8 +22,10 @@ function datepicker() {
     flatpickr(endDateInput, {
       minDate: e.target.value,
       disable: unavailableDates,
+      time_24hr: true,
       enableTime: true,
-      dateFormat: "Y-m-d H:i"
+      defaultHour: 8,
+      dateFormat: "D. d.m.Y at H:i"
       });
     })
   };
