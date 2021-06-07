@@ -39,3 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   datepicker();
   previewImageOnFileSelect();
 });
+
+import { initAutocomplete } from '../plugins/init_autocomplete';
+initAutocomplete();
