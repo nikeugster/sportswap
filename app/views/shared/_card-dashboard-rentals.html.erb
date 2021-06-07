@@ -24,7 +24,7 @@
               <p class="dashboard-pending-text"><%= booking.offer.user.first_name %> is still reviewing your request...</p>
             <% when "accepted" %>
               <p class="dashboard-accepted-text"><%= booking.offer.user.first_name %> accepted your booking request!</p>
-              <p class="dashboard-accepted-text">He is now sharing "<%= booking.offer.title %>" with you from <%= booking.starts_at %> to <%= booking.ends_at %></p>
+              <p class="dashboard-accepted-text">He is now sharing "<%= booking.offer.title %>" with you from <%= booking.starts_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %> to <%= booking.ends_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %>.</p>
             <% when "declined" %>
               <p class="dashboard-declined-text"><%= booking.offer.user.first_name %> declined your request...</p>
             <% end %>
