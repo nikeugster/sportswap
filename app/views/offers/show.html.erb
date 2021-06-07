@@ -10,12 +10,14 @@
   </div>
 
   <div class="show-user-icons">
-    <% if current_user.id == @offer.user_id %>
-      <%= link_to edit_offer_path(@offer.id) do %>
-        <i class="fas fa-edit show-icon"></i>
-      <% end %>
-      <%= link_to offer_path(@offer), method: :delete do %>
-        <i class="fas fa-trash-alt show-icon"></i>
+    <% unless current_user.nil? %>
+      <% if current_user.id == @offer.user_id %>
+        <%= link_to edit_offer_path(@offer.id) do %>
+          <i class="fas fa-edit show-icon"></i>
+        <% end %>
+        <%= link_to offer_path(@offer), method: :delete do %>
+          <i class="fas fa-trash-alt show-icon"></i>
+        <% end %>
       <% end %>
     <% end %>
   </div>
@@ -122,22 +124,36 @@
 
 <div class="d-flex justify-content-between pl-5 pr-5" id="show-p">
   <p class="col-8 p-4"><%= @offer.description %></p>
-
-  <% if current_user.id != @offer.user_id  %>
-    <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
-      <h5 id="card-rent-title">Rent a <%= @offer.title %>!</h5>
-      <% if current_user.nil? %>
-        <p class="pending-text">Please log in to make a booking request.</p>
-      <% end %>
-      <% unless current_user.nil? %>
-         <%= simple_form_for([@offer, @booking]) do |f| %>
-            <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
-            <%= f.input :ends_at, label: "Dropoff:", as: :string, type: :text %>
-            <div class="card-rent-btn">
-              <%= f.submit "Book", class: "btn btn-ghost" %>
-            </div>
-          <% end %>
-      <% end %>
+  <% if current_user.nil? %>
+    <div class="card-rent col-4 p-4">
+      <h5 id="card-rent-title">Rent "<%= @offer.title %>"!</h5>
+      <p class="pending-text">Please log in to make a booking request.</p>
     </div>
+  <% else %>
+    <% if current_user.id == @offer.user_id  %>
+      <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+        <h5 id="card-rent-title">This is your listing for "<%= @offer.title %>"!</h5>
+        <p>Go to your dashboard to manage bookings</p>
+        <div class="card-rent-btn">
+          <%= link_to "Dashboard", dashboard_path, class: "btn btn-ghost"%>
+        </div>
+      </div>
+    <% else %>
+      <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+        <h5 id="card-rent-title">Rent "<%= @offer.title %>!"</h5>
+        <% if current_user.nil? %>
+            <p class="pending-text">Please log in to make a booking request.</p>
+        <% end %>
+        <% unless current_user.nil? %>
+           <%= simple_form_for([@offer, @booking]) do |f| %>
+              <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
+              <%= f.input :ends_at, label: "Dropoff:", as: :string, type: :text %>
+              <div class="card-rent-btn">
+                <%= f.submit "Book", class: "btn btn-ghost" %>
+              </div>
+            <% end %>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>
