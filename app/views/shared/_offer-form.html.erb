@@ -3,7 +3,7 @@
   <%= simple_form_for(@offer, html: { class: "offer-form"}) do |f| %>
     <%= f.input :category, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Outdoor and camping', 'Water sports', 'Team sport', 'Extreme and fun sport', 'Winter sports', 'Bicycle', 'Fishing', 'Fitness', 'Skating', 'Rackets, sticks and clubs', 'Diving', 'Horseback riding'] %>
     <%= f.input :title, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
-    <%= f.input :description, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" } %>
+    <%= f.input :description, label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, input_html: { rows: 7 } %>
     <%= f.input :condition, label: "Condition of the equipment", label_html: { class: "offer-label" }, input_html: { class: "offer-form-input" }, collection: ['Very good', 'Used but okay', 'Not perfect but working', 'At your own risk'], as: :radio_buttons %>
     <h4 class="offer-subtitle my-4">Photos:</h4>
     <div class="offer-form-inline">
