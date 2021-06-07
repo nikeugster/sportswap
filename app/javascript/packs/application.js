@@ -30,12 +30,16 @@ import flatpickr from "flatpickr";
 import { previewImageOnFileSelect } from '../components/photo_preview';
 
 // import { initSelect2 } from '../components/init_select2';
-import datepicker from '../plugins/init_flatpickr'
+
 import { initMapbox } from '../plugins/init_mapbox';
+import initChatroomCable from '../channels/chatroom_channel';
+import datepicker from '../plugins/init_flatpickr';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  initChatroomCable();
   datepicker();
   previewImageOnFileSelect();
 });
