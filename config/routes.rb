@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   resources :bookings, only: [:update, :destroy]
 
   resources :chatrooms, only: [:show, :create] do
-    resources :messages, only: :create
+    resources :messages, only: [:create, :index]
   end
+
+  # post "/dashboard", to: 'messages#create', as: :message_create
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

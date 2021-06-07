@@ -1,7 +1,11 @@
 <%= render 'shared/navbar' %>
 
-<h1>My Messages:</h1>
-
+<h1 class="ml-5 mt-5">My Messages:</h1>
+<% current_user.chatrooms.each do |chatroom| %>
+  <p>Your chat with:</p>
+    <p><%= User.find(chatroom.sender_id).first_name if current_user.id == chatroom.recipient_id %></p>
+    <p><%= User.find(chatroom.recipient_id).first_name if current_user.id == chatroom.sender_id %></p>
+<% end %>
 
 <h1 class="ml-5 mt-5">My Listings</h1>
 <div class="center-container m-5">
