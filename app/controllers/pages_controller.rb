@@ -7,5 +7,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @offers = Offer.all
+    @chatroom = Chatroom.find(params[:chatroom_id]) if params[:chatroom_id].present?
+
   end
 end
