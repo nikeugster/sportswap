@@ -19,9 +19,29 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window);
       new mapboxgl.Marker({ "color": "#EF767A" })
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(map);
+    });
+
+    map.on('mouseenter', 'places', function (e) {
+    map.getCanvas().style.cursor = 'pointer';
+     
+    var coordinates = e.features[0].geometry.coordinates.slice();
+    var description = e.features[0].properties.description;
+     
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+     
+    popup.setLngLat(coordinates).setHTML(description).addTo(map);
+    });
+     
+    map.on('mouseleave', 'places', function () {
+    map.getCanvas().style.cursor = '';
+    popup.remove();
     });
 
     fitMapToMarkers(map, markers);
