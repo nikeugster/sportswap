@@ -1,0 +1,9 @@
+<div class="card-whole-link">
+  <%= link_to offer_path(offer.id) do %>
+    <h6 style="color: #EF767A"><%= offer.title %></h6>
+    <% if offer.photos[0] %>
+      <%= cl_image_tag offer.photos[0].key, style: "object-fit: cover; width: 100%; border-radius: 5px; max-height: 150px; margin-bottom: 8px;" %>
+    <% end %>
+    <p><%= offer.street %> <%= offer.house_no %>, <%= offer.zip_code %> <%= offer.city %></p>
+  <% end %>
+</div>
