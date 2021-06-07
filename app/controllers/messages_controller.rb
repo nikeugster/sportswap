@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
         @chatroom,
         render_to_string(partial: "message", locals: { message: @message })
       )
-      redirect_to dashboard_path
+      redirect_to dashboard_path(chatroom_id: @chatroom.id, anchor: "message-##{@message.id}")
     else
       render dashboard_path
     end
