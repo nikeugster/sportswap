@@ -103,5 +103,10 @@
   color: #0E0000;
   &:hover {
     text-decoration: none;
+    outline: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none; 
   }
 }
