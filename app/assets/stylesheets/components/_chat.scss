@@ -8,12 +8,17 @@
 
 .chat-rooms {
   width: 400px;
-  border-right: 1px solid rgba(0,0,0,0.1)
+  border-right: 1px solid rgba(0,0,0,0.1);
+  a {
+    text-decoration: none;
+  }
 }
 
 .chatroom {
   border-radius: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   p {
+    color: black;
     margin: 0px;
   }
 }
@@ -21,6 +26,17 @@
 .chatroom-active {
     background-color: rgba(239, 118, 122, 0.2);
   }
+
+.chatroom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-icon {
+  color: $sportswap_blue;
+  font-size: 34px;
+}
 
 .chat-messages {
   width: 100%;

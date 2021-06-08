@@ -8,15 +8,11 @@
       <%= link_to dashboard_path(chatroom_id: chatroom.id) do %>
         <% if params[:chatroom_id].to_i == chatroom.id %>
           <div class="chatroom chatroom-active p-3">
-            <p>Your chat with:</p>
-            <p><%= User.find(chatroom.sender_id).first_name if current_user.id == chatroom.recipient_id %></p>
-            <p><%= User.find(chatroom.recipient_id).first_name if current_user.id == chatroom.sender_id %></p>
+            <%= render 'shared/chatroom', chatroom: chatroom %>
           </div>
         <% else %>
           <div class="chatroom p-3">
-            <p>Your chat with:</p>
-            <p><%= User.find(chatroom.sender_id).first_name if current_user.id == chatroom.recipient_id %></p>
-            <p><%= User.find(chatroom.recipient_id).first_name if current_user.id == chatroom.sender_id %></p>
+            <%= render 'shared/chatroom', chatroom: chatroom %>
           </div>
         <% end %>
       <% end %>
