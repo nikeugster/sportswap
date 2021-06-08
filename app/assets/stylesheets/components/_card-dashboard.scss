@@ -9,7 +9,6 @@
 }
 
 .card-dashboard a {
-  width: 50%;
   text-decoration: none;
   color: black;
 }
@@ -35,17 +34,6 @@
   border-radius: 5px;
 }
 
-.card-dashboard-open-bookings {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.card-dashboard-overflow-section {
-  height: 144px;
-  overflow: auto;
-}
-
 .card-dashboard-rentals-infos {
   height: 100%;
   display: flex;
@@ -61,12 +49,4 @@
 
 .card-dashboard-product-rightside {
   width: 50%;
-}
-
-.card-dashboard-booking-section {
-  width: 50%;
-}
-
-.card-dashboard-booking-details-buttons {
-  font-size: 30px;
 }

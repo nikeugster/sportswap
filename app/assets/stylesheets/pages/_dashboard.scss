@@ -9,9 +9,23 @@ h1 {
 }
 
 .dashboard-declined-text {
-  color: $sportswap-red
+  color: $sportswap-red;
+  margin: 0;
 }
 
 .dashboard-pending-text {
   color: $yellow;
+}
+
+.listings-split-view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listings-container {
+  width: 50%;
+}
+
+#bookings-container {
+  width: 50%;
 }
