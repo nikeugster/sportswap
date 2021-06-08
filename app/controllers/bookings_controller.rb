@@ -16,13 +16,17 @@ class BookingsController < ApplicationController
     case @booking.compensation_type
     when "Price per hour"
       @booking.compensation_value = (@offer.compensation_value.to_i * ((@booking.ends_at.to_i - @booking.starts_at.to_i) / 60 / 60)).to_s
+      $modaltype = "Price per hour: $ "
     when "Price per day"
       @booking.compensation_value = (@offer.compensation_value.to_i * ((@booking.ends_at.to_i - @booking.starts_at.to_i) / 24 / 60 / 60)).to_s
+      $modaltype = "Price per day: $ "
     when "Free"
-      @booking.compensation_value = ""
+      @booking.compensation_value = "Free"
+      $modaltype = ""
     when "Other"
       @booking.compensation_value = @offer.compensation_value
-    $modaltype = @booking.compensation_type
+      $modaltype = "Compensation: "
+    end
     $modalvalue = @booking.compensation_value
     $modalstart = @booking.starts_at
     $modalend = @booking.ends_at
