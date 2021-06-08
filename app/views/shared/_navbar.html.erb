@@ -14,11 +14,14 @@
     <%= text_field_tag :equipment,
     params[:equipment],
     class: "search-input-field first-input",
+    autocomplete: "off",
     placeholder: "Equipment" %>
     <%= text_field_tag :location,
     params[:location],
     class: "search-input-field last-input",
+    autocomplete: "off",
     placeholder: "Location" %>
+    <%# raise %>
     <%= button_tag(type: "submit", class: "btn-search-form") do %>
       <i class="fas fa-search"></i>
     <% end %>

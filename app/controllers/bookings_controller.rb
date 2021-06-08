@@ -22,11 +22,11 @@ class BookingsController < ApplicationController
       @booking.compensation_value = ""
     when "Other"
       @booking.compensation_value = @offer.compensation_value
-    end
-    $modaltype =
-    $modalvalue =
-    $modalstart =
-    $modalend =
+    $modaltype = @booking.compensation_type
+    $modalvalue = @booking.compensation_value
+    $modalstart = @booking.starts_at
+    $modalend = @booking.ends_at
+    create_chatroom
     $showmodal = true if @booking.save
     redirect_to offer_path(@offer)
   end
@@ -51,6 +51,19 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def create_chatroom
+    @chatroom = Chatroom.new
+    @chatroom.sender = current_user
+    @chatroom.recipient = @offer.user
+    @chatroom.save unless users_chatrooms_any?(@chatroom)
+  end
+
+  def users_chatrooms_any?(chatroom)
+    query1 = Chatroom.where('sender_id = ? AND recipient_id = ?', chatroom.sender_id, chatroom.recipient_id).present?
+    query2 = Chatroom.where('sender_id = ? AND recipient_id = ?', chatroom.recipient_id, chatroom.sender_id).present?
+    query1 || query2
+  end
 
   def booking_params
     params.require(:booking).permit(:starts_at, :ends_at, :data_totalprice, :data_pricetype)

@@ -35,7 +35,7 @@ const initMapbox = () => {
     setTimeout(() => {
         map.resize();
         fitMapToMarkers(map, markers);
-      }, 1000)
+      }, 2000)
     }
 }
 

@@ -8,7 +8,7 @@
       <div class="col-md-8">
         <p> <%= booking.starts_at %> </p>
         <p><%= offer.user.first_name %> will check and confirm your booking asap. You can check the status of your booking in your dashobard.</p>
-        <%= link_to "Go to dashboard", dashboard_path, class: "btn btn-ghost mb-4"%>
+        <%= link_to "Go to dashboard", dashboard_path(chatroom_id: @chatroom.id), class: "btn btn-ghost mb-4"%>
       </div>
     </div>
  </div>

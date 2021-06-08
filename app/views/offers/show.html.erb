@@ -1,5 +1,8 @@
 <%= render 'shared/navbar' %>
 
+<% content_for :meta_title, "#{@offer.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @offer.description %>
+<% content_for :meta_image, cl_image_path(@offer.photos[0].key) %>
 
 <div class="show-header-section ml-5 mt-5 mr-5">
   <div class="show-title">
