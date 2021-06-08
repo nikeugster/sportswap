@@ -130,15 +130,15 @@
   <div>
   <p class="col-11 p-4"><%= @offer.description %></p>
   <h2>Reviews</h2>
-  <% @offer.reviews.each do |review| %>
-    <ul>
-      <li><%= review.content %> | <%= review.rating %></li>
-    </ul>
+  <% if @offer.reviews.any? %>
+    <% @offer.reviews.each do |review| %>
+      <%#= render partial: 'shared/review-list', locals: {offer: offer} %>
+      <p><%= review.content | review.rating %></p>
+    <% end %>
   <% end %>
   <%# if Booking.where("user_id = #{current_user.id}") %>
-  <% if @booking.user == current_user.id %>
+  <% if @offer.bookings.where("user_id = #{current_user.id}") %>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
-
     <div class="bs-example-modal-lg modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
