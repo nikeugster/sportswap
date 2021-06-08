@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new
     @offer = Offer.find(params[:offer_id])
+    raise
     @booking.user_id = current_user.id
     @booking.offer = @offer
     booking_dates = params[:booking]
@@ -70,6 +71,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:starts_at, :ends_at, :data_totalprice, :data_pricetype)
+    params.require(:booking).permit(:starts_at, :ends_at, :compensation_type, :compensation_value)
   end
 end
