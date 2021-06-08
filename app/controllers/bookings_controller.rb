@@ -12,8 +12,12 @@ class BookingsController < ApplicationController
     booking_dates = params[:booking]
     @booking.starts_at = booking_dates["starts_at"]
     @booking.ends_at = booking_dates["ends_at"]
+    @booking.compensation_value = params[:data_totalprice]
+    @booking.compensation_type = params[:data_pricetype]
     if @booking.save
-      redirect_to dashboard_path, notice: "You've successfully made a booking inquiry for '#{@offer.title}' from #{@offer.user.first_name}."
+      raise
+      $showmodal = true
+      redirect_to offer_path(@offer)
     else
       redirect_to offer_path(@offer)
     end
@@ -41,6 +45,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:starts_at, :ends_at)
+    params.require(:booking).permit(:starts_at, :ends_at, :data_totalprice, :data_pricetype)
   end
 end

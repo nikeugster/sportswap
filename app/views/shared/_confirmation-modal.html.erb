@@ -1,0 +1,28 @@
+<div class="offer-confirmation-modal-container" id="modal-container-element">
+  <div class="offer-confirmation-modal p-5" id="modal-child-element">
+    <h1>Congratulations! You've booked "<%= offer.title %>"</h1>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <%= cl_image_tag offer.photos[0].key, class: "confirmation-photo" %>
+      </div>
+      <div class="col-md-8">
+        <p> <%= booking.starts_at %> </p>
+        <p><%= offer.user.first_name %> will check and confirm your booking asap. You can check the status of your booking in your dashobard.</p>
+        <%= link_to "Go to dashboard", dashboard_path, class: "btn btn-ghost mb-4"%>
+      </div>
+    </div>
+ </div>
+</div>
+
+<script>
+  document.getElementsByTagName("body")[0].style.overflow = "hidden";
+  const modalBackground = document.getElementById("modal-container-element");
+  modalBackground.addEventListener("click", () => {
+    modalBackground.style.display = "none";
+    document.getElementsByTagName("body")[0].style.overflow = "auto";
+  }, false);
+  const modalChild = document.getElementById("modal-child-element");
+  modalChild.addEventListener("click", (e) => {
+    e.stopPropagation();
+  }, false);
+</script>
