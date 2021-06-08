@@ -36,7 +36,7 @@
                 </div>
                 <div class="show-rating">
                   <% if booking.offer.user.reviews.any? %>
-                    <% average = booking.offer.user.reviews.map { |review| review.rating }.sum / offer.user.reviews.length %>
+                    <% average = booking.offer.user.reviews.map { |review| review.rating }.sum / booking.offer.user.reviews.length %>
                     <% average.times do %>
                      <i class="fas fa-star"></i>
                     <% end %>
@@ -47,6 +47,7 @@
                     <p>no reviews yet</p>
                   <% end %>
                 </div>
+              </div>
               </div>
             </div>
           </div>
