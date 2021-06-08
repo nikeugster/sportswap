@@ -30,8 +30,32 @@
 
 #messages {
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .message_content {
   margin-bottom: 0px;
+}
+
+.sender-message {
+  float: right;
+  min-width: 25%;
+  max-width: 50%;
+  background-color: rgba(239, 118, 122, 0.2);
+  border-radius: 22px 22px 0px 22px;
+  p {
+    margin: 0
+  }
+}
+
+.receiver-message {
+  float: left;
+  min-width: 25%;
+  max-width: 50%;
+  background-color: rgba(69, 105, 144, 0.2);
+  border-radius: 22px 22px 22px 0px;
+  p {
+    margin: 0
+  }
 }

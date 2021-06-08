@@ -34,6 +34,7 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 import { initMapbox } from '../plugins/init_mapbox';
 import initChatroomCable from '../channels/chatroom_channel';
 import datepicker from '../plugins/init_flatpickr';
+import scrollBottomMessages from '../plugins/scroll_bottom_messages'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -42,4 +43,5 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   datepicker();
   previewImageOnFileSelect();
+  scrollBottomMessages();
 });
