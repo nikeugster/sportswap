@@ -12,8 +12,8 @@ class BookingsController < ApplicationController
     booking_dates = params[:booking]
     @booking.starts_at = booking_dates["starts_at"]
     @booking.ends_at = booking_dates["ends_at"]
-    @booking.compensation_value = params[:data_totalprice]
-    @booking.compensation_type = params[:data_pricetype]
+    @booking.compensation_value = params[:price]
+    @booking.compensation_type = @offer.compensation_type
     if @booking.save
       raise
       $showmodal = true
