@@ -12,8 +12,11 @@ class BookingsController < ApplicationController
     booking_dates = params[:booking]
     @booking.starts_at = booking_dates["starts_at"]
     @booking.ends_at = booking_dates["ends_at"]
+
+    create_chatroom
+
     if @booking.save
-      redirect_to dashboard_path, notice: "You've successfully made a booking inquiry for '#{@offer.title}' from #{@offer.user.first_name}."
+      redirect_to dashboard_path(chatroom_id: @chatroom.id)
     else
       redirect_to offer_path(@offer)
     end
@@ -39,6 +42,19 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def create_chatroom
+    @chatroom = Chatroom.new
+    @chatroom.sender = current_user
+    @chatroom.recipient = @offer.user
+    @chatroom.save unless users_chatrooms_any?(@chatroom)
+  end
+
+  def users_chatrooms_any?(chatroom)
+    query1 = Chatroom.where('sender_id = ? AND recipient_id = ?', chatroom.sender_id, chatroom.recipient_id).present?
+    query2 = Chatroom.where('sender_id = ? AND recipient_id = ?', chatroom.recipient_id, chatroom.sender_id).present?
+    query1 || query2
+  end
 
   def booking_params
     params.require(:booking).permit(:starts_at, :ends_at)

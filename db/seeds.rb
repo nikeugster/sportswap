@@ -10,6 +10,8 @@ require "open-uri"
 
 puts "Cleaning the database"
 
+Message.delete_all
+Chatroom.delete_all
 Booking.delete_all
 Offer.delete_all
 User.delete_all
@@ -121,7 +123,7 @@ chrissie_offer_2_photo_2 = URI.open("https://images.unsplash.com/photo-153150277
 chrissie_offer_2.photos.attach(io: chrissie_offer_2_photo_2, filename: "chrissie_offer_2_photo_2.jpeg", content_type: "image/jpeg")
 chrissie_offer_2_photo_3 = URI.open("https://images.unsplash.com/photo-1475666675596-cca2035b3d79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
 chrissie_offer_2.photos.attach(io: chrissie_offer_2_photo_3, filename: "chrissie_offer_2_photo_3.jpeg", content_type: "image/jpeg")
-chrissie_offer_2_photo_4 = URI.open("https://images.unsplash.com/photo-1571188654248-7a89213915f7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+chrissie_offer_2_photo_4 = URI.open("https://images.unsplash.com/photo-1487803836022-91054ca05fdd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzF8fGJpa2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 chrissie_offer_2.photos.attach(io: chrissie_offer_2_photo_4, filename: "chrissie_offer_2_photo_4.jpeg", content_type: "image/jpeg")
 chrissie_offer_2.save!
 

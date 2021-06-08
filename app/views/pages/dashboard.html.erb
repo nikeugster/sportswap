@@ -1,6 +1,41 @@
 <%= render 'shared/navbar' %>
 
-<h1 class="ml-5 mt-5">My Listings</h1>
+<h1 class="ml-5 mt-5">My Messages:</h1>
+
+<div class="chat-container p-3 m-5">
+  <div class="chat-rooms pr-3 ml-3 mr-3">
+    <% current_user.chatrooms.each do |chatroom| %>
+      <%= link_to dashboard_path(chatroom_id: chatroom.id) do %>
+        <% if params[:chatroom_id].to_i == chatroom.id %>
+          <div class="chatroom chatroom-active p-3">
+            <%= render 'shared/chatroom', chatroom: chatroom %>
+          </div>
+        <% else %>
+          <div class="chatroom p-3">
+            <%= render 'shared/chatroom', chatroom: chatroom %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="chat-messages p-3">
+    <% if @chatroom.present? %>
+      <% @message = Message.new %>
+      <div id="messages" data-current-user-id="<%= current_user.id %>" data-chatroom-id="<%= @chatroom.id %>">
+        <% @chatroom.messages.each do |message| %>
+          <%= render 'messages/message', message: message %>
+        <% end %>
+      </div>
+
+      <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
+        <%= f.input :content, label: false, input_html: { class: "chat-input", autocomplete: "off" }, placeholder: "..." %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<h1 class="ml-5">My Listings</h1>
 <div class="center-container m-5">
   <% listings = Offer.where("user_id = #{current_user.id}") %>
   <p><%= "Nothing here yet..." if listings.empty? %></p>
