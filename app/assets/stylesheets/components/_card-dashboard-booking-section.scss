@@ -1,0 +1,28 @@
+.card-dashboard-booking-section {
+  background-color: white;
+  border-radius: 5px;
+  width: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  min-height: 200px;
+  max-height: 631px;
+  overflow: auto;
+}
+
+.booking-request-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-booking-info {
+  p {
+    margin: 0;
+  }
+}
+
+.dashboard-booking-buttons {
+  font-size: 30px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
