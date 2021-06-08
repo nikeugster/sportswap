@@ -53,6 +53,11 @@ input:-webkit-autofill:active
 .algolia-places {
   width: auto;
   height: auto;
+  z-index: 1000;
+
+  .ap-dropdown-menu {
+    width: 116%;
+  }
 
   .ap-icon-pin {
     display: none;
@@ -63,7 +68,7 @@ input:-webkit-autofill:active
   }
 
   input {
-    width: auto;
+    width: 230px;
     height: auto;
     margin-left: 8px;
     padding-left: 2px;

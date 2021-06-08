@@ -2,7 +2,8 @@ import places from 'places.js';
 
 const initAutocomplete = () => {
   const reconfigurableOptions = {
-    language: 'en'
+    language: 'en',
+    countries: ['de'],
   };
 
   const addressInput = document.querySelector('.last-input');

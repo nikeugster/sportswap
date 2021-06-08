@@ -2,12 +2,16 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
 
   def index
-    query = "#{params[:equipment]} #{params[:location]} #{params[:category]}"
+    query = "#{params[:equipment]} #{params[:category]}"
 
     if query.present?
-      @offers = Offer.search_by_title_and_location_and_category(query)
+      @offers = Offer.search_by_title_and_category(query)
     else
       @offers = Offer.all
+    end
+
+    if params[:location].present?
+      @offers = @offers.near(params[:location], 30)
     end
 
     @markers = @offers.geocoded.map do |offer|
