@@ -12,15 +12,23 @@ class BookingsController < ApplicationController
     booking_dates = params[:booking]
     @booking.starts_at = booking_dates["starts_at"]
     @booking.ends_at = booking_dates["ends_at"]
-    @booking.compensation_value = params[:price]
     @booking.compensation_type = @offer.compensation_type
-    if @booking.save
-      raise
-      $showmodal = true
-      redirect_to offer_path(@offer)
-    else
-      redirect_to offer_path(@offer)
+    case @booking.compensation_type
+    when "Price per hour"
+      @booking.compensation_value = (@offer.compensation_value.to_i * ((@booking.ends_at.to_i - @booking.starts_at.to_i) / 60 / 60)).to_s
+    when "Price per day"
+      @booking.compensation_value = (@offer.compensation_value.to_i * ((@booking.ends_at.to_i - @booking.starts_at.to_i) / 24 / 60 / 60)).to_s
+    when "Free"
+      @booking.compensation_value = ""
+    when "Other"
+      @booking.compensation_value = @offer.compensation_value
     end
+    $modaltype =
+    $modalvalue =
+    $modalstart =
+    $modalend =
+    $showmodal = true if @booking.save
+    redirect_to offer_path(@offer)
   end
 
   def update
