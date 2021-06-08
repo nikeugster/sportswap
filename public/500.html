@@ -4,63 +4,38 @@
   <title>We're sorry, but something went wrong (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+  .error500 {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    margin-left: 35px;
+  }
+
+  .customized-500-page p {
+    font-size: 18px;
+    color: #EF767A;
     text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
+    font-family: "Poppins";
   }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+  .customized-500-page {
+    display: flex;
+    justify-content: center;
   }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
+<body>
+  <div class="customized-500-page">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <p>We're sorry, the page you were looking for doesn't exist.</p>
+      <p>You may have mistyped the address or the page may have moved.</p>
+      <div class="error500">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 622.3 747.71"><defs><style>.cls-1{fill:#f2f2f2;}.cls-2{fill:#5fc5d1;}.cls-3{fill:#6bd5e1;}.cls-4,.cls-6,.cls-7{fill:none;stroke-linecap:round;stroke-linejoin:round;}.cls-4{stroke:#fd8369;stroke-width:11px;}.cls-5{fill:#a4a4a4;}.cls-6,.cls-7{stroke:#ffd98e;stroke-width:5px;}.cls-7{stroke-dasharray:16.09 16.09;}</style></defs><title>map-colour</title><g id="Layer_2" data-name="Layer 2"><g id="vector"><path class="cls-1" d="M543.78,173.61C604,239.28,636.62,327.13,616.2,394.7S522.33,509.29,462.1,570.55,354.86,707,279.64,735.09c-75.07,28.06-178.35,8.81-225.5-52.45C6.83,621.53,15.5,518.25,31.37,431s39.22-158.51,86.38-224.18C165.05,141.29,236.3,81.35,316.07,73S483.55,107.94,543.78,173.61Z"/><polygon class="cls-2" points="79.5 694.72 0 593.72 0 153.72 79.5 254.72 79.5 694.72"/><polygon class="cls-3" points="526.5 614.22 79.5 695.22 79.5 255.22 526.5 174.22 526.5 614.22"/><polygon class="cls-2" points="618.65 655.76 526.5 614.22 526.5 174.22 618.65 215.76 618.65 655.76"/><line class="cls-4" x1="393.13" y1="454.45" x2="466.74" y2="528.07"/><line class="cls-4" x1="393.13" y1="528.07" x2="466.74" y2="454.45"/><path class="cls-5" d="M291.69,0c-48.09,0-96.7,46.78,0,172C388.38,46.78,339.77,0,291.69,0Zm0,88.07a32.8,32.8,0,1,1,32.79-32.8A32.79,32.79,0,0,1,291.69,88.07Z"/><path class="cls-6" d="M132,245.71c-1.4,2.26-2.73,4.57-4,6.92"/><path class="cls-7" d="M121,267.13c-11.54,27.46-16.08,58.34-16.08,86.17,0,142.57,34.14,242.47,128.52,242.47,83.17,0,100.69-81.87,135.77-101.3"/><path class="cls-6" d="M376.65,491.41a30.26,30.26,0,0,1,7.91-1.05"/></g></g></svg>
+      </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
