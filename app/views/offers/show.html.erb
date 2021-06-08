@@ -126,7 +126,14 @@
 <div class="d-flex justify-content-between pl-5 pr-5" id="show-p">
   <div>
   <p class="col-11 p-4"><%= @offer.description %></p>
-  <% if Booking.where("user_id = #{current_user.id}") %>
+  <h2>Reviews</h2>
+  <% @offer.reviews.each do |review| %>
+    <ul>
+      <li><%= review.content %> | <%= review.rating %></li>
+    </ul>
+  <% end %>
+  <%# if Booking.where("user_id = #{current_user.id}") %>
+  <% if @booking.user == current_user.id %>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
 
     <div class="bs-example-modal-lg modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
