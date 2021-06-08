@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_restaurant, only: [:new, :create]
+  before_action :set_offer, only: [:new, :create]
 
   def new
     @review = Review.new
@@ -8,6 +8,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.offer = @offer
+    @review.user = @offer.user
     if @review.save
       redirect_to offer_path(@offer)
     else

@@ -48,12 +48,6 @@
                   <% end %>
                 </div>
               </div>
-              <div>
-                <% if booking.status == "accepted" %>
-                <%= link_to review_path(booking.offer.id) do %>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
-                <% end %>
-                <% end %>
               </div>
             </div>
           </div>

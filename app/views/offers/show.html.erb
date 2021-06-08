@@ -46,7 +46,7 @@
       </div>
       <div class="show-rating">
         <% if @offer.user.reviews.any? %>
-          <% average = @offer.user.reviews.map { |review| review.rating }.sum / offer.user.reviews.length %>
+          <% average = @offer.user.reviews.map { |review| review.rating }.sum / @offer.user.reviews.length %>
           <% average.times do %>
            <i class="fas fa-star"></i>
           <% end %>
@@ -124,7 +124,25 @@
 </div>
 
 <div class="d-flex justify-content-between pl-5 pr-5" id="show-p">
-  <p class="col-8 p-4"><%= @offer.description %></p>
+  <div>
+  <p class="col-11 p-4"><%= @offer.description %></p>
+  <% if Booking.where("user_id = #{current_user.id}") %>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
+
+    <div class="bs-example-modal-lg modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <h2>Add a review</h2>
+          <%= simple_form_for([@offer, @offer.reviews.build]) do |f| %>
+            <%= f.input :rating %>
+            <%= f.input :content %>
+            <%= f.button :submit %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
   <% if current_user.nil? %>
     <div class="card-rent col-4 p-4">
       <h5 id="card-rent-title">Rent "<%= @offer.title %>"!</h5>

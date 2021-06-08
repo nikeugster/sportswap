@@ -4,9 +4,9 @@
   <% if @offers.empty? %>
     No results found...
   <% elsif params[:equipment].present? && params[:location].present? %>
-    <%= params[:equipment].capitalize.pluralize %> in <%= params[:location].capitalize %>
+    <%= params[:equipment].capitalize.pluralize %> in <%= params[:location].split.map(&:capitalize).join(' ') %>
   <% elsif params[:location].present? %>
-    Sports equipment in <%= params[:location].capitalize %>
+    Sports equipment in <%= params[:location].split.map(&:capitalize).join(' ') %>
   <% elsif params[:equipment].present? %>
      <%= params[:equipment].capitalize.pluralize %>
   <% else %>
