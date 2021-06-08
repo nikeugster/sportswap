@@ -1,4 +1,4 @@
-<div class="message-container" id="message-<%= message.id %>">
+<div class="message-container" data-sender-id="<%= message.user_id %>" id="message-<%= message.id %>">
   <% if message.user_id == current_user.id %>
     <div class="sender-message m-3 p-3">
       <div class="message">

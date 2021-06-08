@@ -26,7 +26,7 @@
   <div class="chat-messages p-3">
     <% if @chatroom.present? %>
       <% @message = Message.new %>
-      <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <div id="messages" data-current-user-id="<%= current_user.id %>" data-chatroom-id="<%= @chatroom.id %>">
         <% @chatroom.messages.each do |message| %>
           <%= render 'messages/message', message: message %>
         <% end %>
