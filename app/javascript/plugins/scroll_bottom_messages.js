@@ -1,8 +1,14 @@
+let scrolled = false
+
 const scrollBottomMessages = () => {
-  const messagesWindow = document.getElementById('messages');
-  messagesWindow.scrollTop = messagesWindow.scrollHeight;
+  if (!scrolled) {
+    const messagesWindow = document.getElementById('messages');
+    messagesWindow.scrollTop = messagesWindow.scrollHeight;
+  }
 };
 
-setInterval(scrollBottomMessages, 1000);
+$('#messages').on('scroll', function(){
+  let scrolled=true;
+});
 
 export default scrollBottomMessages;
