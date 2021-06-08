@@ -1,5 +1,8 @@
 <%= render 'shared/navbar' %>
 
+<% content_for :meta_title, "#{@offer.title} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @offer.description %>
+<% content_for :meta_image, cl_image_path(@offer.photos[0].key) %>
 
 <div class="show-header-section ml-5 mt-5 mr-5">
   <div class="show-title">
@@ -10,12 +13,14 @@
   </div>
 
   <div class="show-user-icons">
-    <% if current_user.id == @offer.user_id %>
-      <%= link_to edit_offer_path(@offer.id) do %>
-        <i class="fas fa-edit show-icon"></i>
-      <% end %>
-      <%= link_to offer_path(@offer), method: :delete do %>
-        <i class="fas fa-trash-alt show-icon"></i>
+    <% unless current_user.nil? %>
+      <% if current_user.id == @offer.user_id %>
+        <%= link_to edit_offer_path(@offer.id) do %>
+          <i class="fas fa-edit show-icon"></i>
+        <% end %>
+        <%= link_to offer_path(@offer), method: :delete do %>
+          <i class="fas fa-trash-alt show-icon"></i>
+        <% end %>
       <% end %>
     <% end %>
   </div>
@@ -25,13 +30,14 @@
 
 <div class="show-infos ml-5 mr-5">
   <p><%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
-  <% if @offer.compensation_type == "Price per hour" %>
+  <% case @offer.compensation_type %>
+  <% when "Price per hour" %>
     <p>$ <%= @offer.compensation_value %> per hour</p>
-  <% elsif @offer.compensation_type == "Price per day" %>
+  <% when "Price per day" %>
     <p>$ <%= @offer.compensation_value %> per day</p>
-  <% elsif @offer.compensation_type == "Free" %>
+  <% when "Free" %>
     <p>free</p>
-  <% elsif @offer.compensation_type == "Other" %>
+  <% when "Other" %>
     <p><%= @offer.compensation_value %></p>
   <% end %>
   <p><%= @offer.condition %></p>
@@ -122,22 +128,60 @@
 
 <div class="d-flex justify-content-between pl-5 pr-5" id="show-p">
   <p class="col-8 p-4"><%= @offer.description %></p>
-
-  <% if current_user.id != @offer.user_id  %>
-    <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
-      <h5 id="card-rent-title">Rent a <%= @offer.title %>!</h5>
-      <% if current_user.nil? %>
-        <p class="pending-text">Please log in to make a booking request.</p>
-      <% end %>
-      <% unless current_user.nil? %>
-         <%= simple_form_for([@offer, @booking]) do |f| %>
-            <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
-            <%= f.input :ends_at, label: "Dropoff:", as: :string, type: :text %>
-            <div class="card-rent-btn">
-              <%= f.submit "Book", class: "btn btn-ghost" %>
-            </div>
-          <% end %>
-      <% end %>
+  <% if current_user.nil? %>
+    <div class="card-rent col-4 p-4">
+      <h5 id="card-rent-title">Rent "<%= @offer.title %>"!</h5>
+      <p class="pending-text">Please log in to make a booking request.</p>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-ghost mb-4" %>
     </div>
+  <% else %>
+    <% if current_user.id == @offer.user_id  %>
+      <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+        <h5 id="card-rent-title">This is your listing for<br>"<%= @offer.title %>"</h5>
+        <div class="mt-4">
+          <% booking_count = 0 %>
+          <% @offer.bookings.each do |booking| %>
+            <% booking_count += 1 if booking[:status] == "pending" %>
+          <% end %>
+          <% if booking_count == 1 %>
+            <p>You have <%= booking_count %> pending booking.</p>
+          <% elsif booking_count > 1 %>
+            <p>You have <%= booking_count %> pending bookings.</p>
+          <% end %>
+          <p>Go to your dashboard to manage your bookings:</p>
+          <div class="card-rent-btn">
+            <%= link_to "Dashboard", dashboard_path, class: "btn btn-ghost mb-4"%>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+        <h5 id="card-rent-title">Rent "<%= @offer.title %>!"</h5>
+        <div class="text-left mt-4 my-4">
+          <% case @offer.compensation_type %>
+          <% when "Price per hour" %>
+            Price: $ <span id="pricedata" data-pricetype="PH"><%= @offer.compensation_value %></span> per hour<br>
+          <% when "Price per day" %>
+            Price: $ <span id="pricedata" data-pricetype="PD"><%= @offer.compensation_value %></span> per day<br>
+          <% when "Free" %>
+            <div id="pricedata" data-pricetype="FR">For free!</div>
+          <% when "Other" %>
+            Compensation: <span id="pricedata" data-pricetype="OT"><%= @offer.compensation_value %></span><br>
+          <% end %>
+          Condition: <%= @offer.condition %><br>
+          Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
+        </div>
+        <%= simple_form_for([@offer, @booking]) do |f| %>
+          <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
+          <%= f.input :ends_at, label: "Dropoff:", as: :string, type: :text %>
+          <div class="font-weight-bold mt-4">
+            <div id="total-price"></div>
+          </div>
+          <div class="card-rent-btn">
+            <%= f.submit "Book", id: "book-button", class: "btn btn-ghost my-4", "data-pricetype" => "0", "data-totalprice" => "0"%>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 </div>

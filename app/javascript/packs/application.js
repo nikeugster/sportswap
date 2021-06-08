@@ -45,3 +45,6 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   scrollBottomMessages();
 });
+
+import { initAutocomplete } from '../plugins/init_autocomplete';
+initAutocomplete();

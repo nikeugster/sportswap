@@ -58,7 +58,7 @@ sandra = User.new(
   first_name: "Sandra",
   last_name: "Bolton"
 )
-sandra_avatar = URI.open("https://images.unsplash.com/photo-1531944342704-649d95a5838d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80")
+sandra_avatar = URI.open("https://images.unsplash.com/photo-1619443143266-6008deeee7c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80")
 sandra.photo.attach(io: sandra_avatar, filename: "sandra_avatar.jpeg", content_type: "image/jpeg")
 sandra.save!
 
