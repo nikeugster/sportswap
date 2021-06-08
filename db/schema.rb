@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2021_06_07_102847) do
     t.bigint "offer_id", null: false
     t.bigint "user_id", null: false
     t.boolean "accepted", default: false
+    t.string "compensation_type"
+    t.string "compensation_value"
     t.index ["offer_id"], name: "index_bookings_on_offer_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

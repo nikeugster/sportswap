@@ -1,0 +1,29 @@
+<div class="offer-confirmation-modal-container" id="modal-container-element">
+  <div class="offer-confirmation-modal p-5" id="modal-child-element">
+    <h1>Congratulations! You've booked "<%= offer.title %>"</h1>
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <%= cl_image_tag offer.photos[0].key, class: "confirmation-photo" %>
+      </div>
+      <div class="col-md-8">
+        <p>From <%= $modalstart.strftime("%a. %d.%m.%Y at %R") %> to <%= $modalend.strftime("%a. %d.%m.%Y at %R") %></p>
+        <p>Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %><br><%= $modaltype %><%= $modalvalue %></p>
+        <p><%= @offer.user.first_name %> will check and confirm your booking asap. You can check the status of your booking in your dashboard.</p>
+        <%= link_to "Go to dashboard", dashboard_path(chatroom_id: current_user.chatrooms_as_sender.last.id), class: "btn btn-ghost mb-4"%>
+      </div>
+    </div>
+ </div>
+</div>
+
+<script>
+  document.getElementsByTagName("body")[0].style.overflow = "hidden";
+  const modalBackground = document.getElementById("modal-container-element");
+  modalBackground.addEventListener("click", () => {
+    modalBackground.style.display = "none";
+    document.getElementsByTagName("body")[0].style.overflow = "auto";
+  }, false);
+  const modalChild = document.getElementById("modal-child-element");
+  modalChild.addEventListener("click", (e) => {
+    e.stopPropagation();
+  }, false);
+</script>
