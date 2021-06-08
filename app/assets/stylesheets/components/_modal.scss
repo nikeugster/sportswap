@@ -1,0 +1,25 @@
+.offer-confirmation-modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer-confirmation-modal {
+  height: 50vh;
+  width: 50vw;
+  background-color: white;
+}
+
+.confirmation-photo {
+  width: 100%;
+  height: 60%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}

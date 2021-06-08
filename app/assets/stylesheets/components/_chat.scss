@@ -1,0 +1,97 @@
+.chat-container {
+  display: flex;
+  width: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  height: 600px;
+  background-color: white;
+}
+
+.chat-rooms {
+  width: 400px;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  a {
+    text-decoration: none;
+  }
+}
+
+.chatroom {
+  border-radius: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  p {
+    color: black;
+    margin: 0px;
+  }
+}
+
+.chatroom-active {
+    background-color: rgba(239, 118, 122, 0.2);
+  }
+
+.chatroom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.partner-name {
+  padding: 0px;
+}
+
+.message-preview {
+  font-size: 12px;
+}
+
+.chat-icon {
+  color: $sportswap_blue;
+  font-size: 34px;
+}
+
+.chat-messages {
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat-input {
+  border-radius: 5px;
+  text-align: left;
+  &::-webkit-input-placeholder {
+    color: rgba(0,0,0,0.3);
+  }
+}
+
+#messages {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message_content {
+  margin-bottom: 0px;
+}
+
+.sender-message {
+  float: right;
+  min-width: 25%;
+  max-width: 50%;
+  background-color: rgba(239, 118, 122, 0.2);
+  border-radius: 22px 22px 0px 22px;
+  p {
+    margin: 0
+  }
+}
+
+.receiver-message {
+  float: left;
+  min-width: 25%;
+  max-width: 50%;
+  background-color: rgba(69, 105, 144, 0.2);
+  border-radius: 22px 22px 22px 0px;
+  p {
+    margin: 0
+  }
+}
