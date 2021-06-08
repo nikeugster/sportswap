@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new
     @offer = Offer.find(params[:offer_id])
-    raise
     @booking.user_id = current_user.id
     @booking.offer = @offer
     booking_dates = params[:booking]
