@@ -3,25 +3,19 @@
 <div class="chatroom-content">
   <div class="show-profile">
     <%= cl_image_tag @chatpartner.photo.key, class: "avatar" %>
-    <div class="d-flex flex-column justify-content-space-around">
-      <div class="show-name">
-        <p><%= @chatpartner.first_name %></p>
-      </div>
-      <div class="show-rating">
-        <% if @chatpartner.reviews.any? %>
-          <% average = @chatpartner.reviews.map { |review| review.rating }.sum / @chatpartner.reviews.length %>
-          <% average.times do %>
-           <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - average).times do  %>
-           <i class="far fa-star"></i>
-          <% end %>
-        <% else %>
-          <p>no reviews yet</p>
-        <% end %>
-      </div>
+    <div class="d-flex flex-column justify-content-space-around pl-1">
+      <p class="partner-name"><%= @chatpartner.first_name %></p>
+      <% if chatroom.messages.present? && chatroom.messages.last.content.length >= 25 %>
+        <p class="message-preview"><%= chatroom.messages.last.content[0..25] %>...</p>
+      <% elsif chatroom.messages.present? && chatroom.messages.last.content.length < 25 %>
+        <p class="message-preview"><%= chatroom.messages.last.content %></p>
+      <% else %>
+        <p class="message-preview">No messages yet...</p>
+      <% end %>
     </div>
   </div>
 
-  <i class="far fa-comment-dots chat-icon"></i>
+  <% if chatroom.messages.present? %>
+    <p><%= chatroom.messages.last.created_at.strftime("%H:%M") %></p>
+  <% end %>
 </div>
