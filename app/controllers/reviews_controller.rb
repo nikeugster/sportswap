@@ -11,8 +11,6 @@ class ReviewsController < ApplicationController
     @review.user = @offer.user
     if @review.save
       redirect_to offer_path(@offer)
-    else
-      render :new
     end
   end
 
