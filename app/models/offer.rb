@@ -6,8 +6,8 @@ class Offer < ApplicationRecord
   validates :category, :condition, :title, :description, :street, :zip_code, :city, :country, :compensation_type, :compensation_value, presence: true
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_location_and_category,
-    against: [:category, :title, :description, :city, :street, :zip_code],
+  pg_search_scope :search_by_title_and_category,
+    against: [:category, :title, :description],
     using: {
       tsearch: { prefix: true }
     }
