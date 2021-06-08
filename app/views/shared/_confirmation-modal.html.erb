@@ -8,7 +8,7 @@
       <div class="col-md-8">
         <p>From <%= $modalstart.strftime("%a. %d.%m.%Y at %R") %> to <%= $modalend.strftime("%a. %d.%m.%Y at %R") %></p>
         <p>Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %><br><%= $modaltype %><%= $modalvalue %></p>
-        <p><%= @offer.user.first_name %> will check and confirm your booking asap. You can check the status of your booking in your dashobard.</p>
+        <p><%= @offer.user.first_name %> will check and confirm your booking asap. You can check the status of your booking in your dashboard.</p>
         <%= link_to "Go to dashboard", dashboard_path(chatroom_id: current_user.chatrooms_as_sender.last.id), class: "btn btn-ghost mb-4"%>
       </div>
     </div>
