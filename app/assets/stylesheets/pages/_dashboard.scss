@@ -15,3 +15,16 @@ h1 {
 .dashboard-pending-text {
   color: $yellow;
 }
+
+.listings-split-view {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listings-container {
+  width: 50%;
+}
+
+.bookings-container {
+  width: 50%;
+}

@@ -18,36 +18,5 @@
       </div>
     </div>
   <% end %>
-
-  <div class="card-dashboard-booking-section">
-    <% if offer.bookings.present? %>
-      <h2>Open booking requests:</h2>
-    <% else %>
-      <h2>No booking requests.</h2>
-    <% end %>
-    <div class="card-dashboard-overflow-section">
-    <% current_user.bookings_as_owner.each do |booking| %>
-      <% if booking.offer_id == offer.id && booking.status == "pending" %>
-        <div class="card-dashboard-open-bookings">
-          <div class="card-dashboard-booking-details-text">
-            <p><%= booking.user.first_name %> <%= booking.user.last_name %> wants to rent "<%= offer.title %>"</p>
-            <p>from <%= booking.starts_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %> to <%= booking.ends_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %>.</p>
-          </div>
-          <div class="card-dashboard-booking-details-buttons">
-            <%= link_to booking_path(booking, "declined"), method: :patch, remote: true do %>
-              <i class="far fa-times-circle dashboard-declined-text"></i>
-            <% end %>
-            <%= link_to booking_path(booking, "accepted"), method: :patch, remote: true do %>
-              <i class="far fa-check-circle dashboard-accepted-text"></i>
-            <% end %>
-          </div>
-        </div>
-      <% elsif booking.offer_id == offer.id && booking.status == "accepted" %>
-        <p class="dashboard-accepted-text"><i class="fas fa-check"></i> You have accepted <%= booking.user.first_name %>'s booking request from <%= booking.starts_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %> to <%= booking.ends_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %>.</p>
-      <% elsif booking.offer_id == offer.id && booking.status == "declined" %>
-        <p class="dashboard-declined-text"><i class="fas fa-times"></i></i> You have declined <%= booking.user.first_name %>'s booking request from <%= booking.starts_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %> to <%= booking.ends_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %>.</p>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
 </div>
+
