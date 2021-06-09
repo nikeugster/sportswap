@@ -7,9 +7,18 @@
         <%= cl_image_tag offer.photos[0].key, class: "confirmation-photo" %>
       </div>
       <div class="col-md-8">
-        <p><i class="far fa-calendar-alt show-icon-in-card"></i>From: <%= $modalstart.strftime("%a. %d.%m.%Y at %R") %><br><span class="order-confirmation-modal-textin">To: <%= $modalend.strftime("%a. %d.%m.%Y at %R") %></span></p>
-        <p><i class="fas fa-map-marker-alt show-icon-in-card"></i>Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
-        <p><i class="fas fa-dollar-sign show-icon-in-card"></i><%= $modaltype %><%= $modalvalue %></p>
+        <div class="offer-confirmation-list-container">
+          <i class="far fa-calendar-alt show-icon-in-card"></i>
+          <p>From: <%= $modalstart.strftime("%a. %d.%m.%Y at %R") %><br>To: <%= $modalend.strftime("%a. %d.%m.%Y at %R") %></p>
+        </div>
+        <div class="offer-confirmation-list-container">
+          <i class="fas fa-map-marker-alt show-icon-in-card"></i>
+          <p>Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
+        </div>
+        <div class="offer-confirmation-list-container">
+          <i class="fas fa-dollar-sign show-icon-in-card"></i>
+          <p>Total price: $ <%= $modalvalue %></p>
+        </div>
         <p class="offer-confirmation-modal-text"><%= @offer.user.first_name %> will check and confirm your booking asap. You can check the status of your booking in your dashboard.</p>
         <%= link_to "Go to dashboard", dashboard_path, class: "btn btn-ghost mb-4"%>
       </div>

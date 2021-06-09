@@ -178,9 +178,9 @@
             <% booking_count += 1 if booking[:status] == "pending" %>
           <% end %>
           <% if booking_count == 1 %>
-            <p>You have <%= booking_count %> pending booking.</p>
+            <p class="offer-confirmation-title-red">You have <strong><%= booking_count %></strong> pending booking.</p>
           <% elsif booking_count > 1 %>
-            <p>You have <%= booking_count %> pending bookings.</p>
+            <p class="offer-confirmation-title-red">You have <strong><%= booking_count %></strong> pending bookings.</p>
           <% end %>
           <p>Go to your dashboard to manage your bookings:</p>
           <div class="card-rent-btn">
@@ -192,29 +192,41 @@
       <div class="card-rent bg-white col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
         <h5 id="card-rent-title">Rent "<%= @offer.title %>!"</h5>
         <div class="text-left mt-4 my-4">
-          <% case @offer.compensation_type %>
-          <% when "Price per hour" %>
-            <i class="fas fa-dollar-sign show-icon-in-card"></i>Price: <span id="pricedata" data-pricetype="PH"><%= @offer.compensation_value %></span> per hour<br>
-          <% when "Price per day" %>
-            <i class="fas fa-dollar-sign show-icon-in-card"></i>Price: <span id="pricedata" data-pricetype="PD"><%= @offer.compensation_value %></span> per day<br>
-          <% when "Free" %>
-            <i class="fas fa-dollar-sign show-icon-in-card"><div id="pricedata" data-pricetype="FR">For free!</div>
-          <% when "Other" %>
-            <i class="fas fa-dollar-sign show-icon-in-card">Compensation: <span id="pricedata" data-pricetype="OT"><%= @offer.compensation_value %></span><br>
+          <div class="offer-confirmation-list-container mt-3">
+            <% case @offer.compensation_type %>
+            <% when "Price per hour" %>
+              <i class="fas fa-dollar-sign show-icon-in-card"></i>
+              <p>Price: <span id="pricedata" data-pricetype="PH"><%= @offer.compensation_value %></span> per hour</p>
+            <% when "Price per day" %>
+              <i class="fas fa-dollar-sign show-icon-in-card"></i>
+              <p>Price: <span id="pricedata" data-pricetype="PD"><%= @offer.compensation_value %></span> per day</p>
+            <% when "Free" %>
+              <i class="fas fa-dollar-sign show-icon-in-card">
+              <p><div id="pricedata" data-pricetype="FR">For free!</div></p>
+            <% when "Other" %>
+              <i class="fas fa-dollar-sign show-icon-in-card">
+              <p>Compensation: <span id="pricedata" data-pricetype="OT"><%= @offer.compensation_value %></span></p>
+            <% end %>
+          </div>
+          <div class="offer-confirmation-list-container">
+            <i class="fas fa-check show-icon-in-card"></i>
+            <p>Condition: <%= @offer.condition %><br></p>
+          </div>
+          <div class="offer-confirmation-list-container mb-4">
+            <i class="fas fa-map-marker-alt show-icon-in-card"></i>
+            <p>Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
+          </div>
+          <%= simple_form_for([@offer, @booking]) do |f| %>
+            <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
+            <%= f.input :ends_at, label: "Dropoff:", as: :string, type: :text %>
+            <div class="font-weight-bold mt-4">
+              <div id="total-price"></div>
+            </div>
+            <div class="card-rent-btn">
+              <%= f.button :submit, "Book", id: "book-button", class: "btn btn-ghost my-4", "data-pricetype" => "0", "data-totalprice" => "0"%>
+            </div>
           <% end %>
-          <i class="fas fa-check show-icon-in-card"></i>Condition: <%= @offer.condition %><br>
-          <i class="fas fa-map-marker-alt show-icon-in-card"></i>Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
         </div>
-        <%= simple_form_for([@offer, @booking]) do |f| %>
-          <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
-          <%= f.input :ends_at, label: "Dropoff:", as: :string, type: :text %>
-          <div class="font-weight-bold mt-4">
-            <div id="total-price"></div>
-          </div>
-          <div class="card-rent-btn">
-            <%= f.button :submit, "Book", id: "book-button", class: "btn btn-ghost my-4", "data-pricetype" => "0", "data-totalprice" => "0"%>
-          </div>
-        <% end %>
       </div>
     <% end %>
   <% end %>

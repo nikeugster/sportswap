@@ -5,37 +5,39 @@ header {
 }
 
 .hero-group {
-  width: 500px;
-  margin: 200px 140px 120px 140px;
-  position: relative;
+  width: 635px;
+  height: 370px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 30px rgba(124, 137, 151, 0.25);
+  padding: 63px 63px;
+  margin: 200px 140px 120px 90px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  z-index: 999;
+  background-color: white;
+  h1 {
+    color: $sportswap-blue;
+    font-weight: 600;
+    font-size: 80px;
+    margin-bottom: 24px;
+  }
+  h2 {
+    color: black;
+  }
 }
 
-.hero-group h1, h2 {
-  color: $sportswap_red
-}
-
-.hero-group h1 {
-  font-size: 80px;
-  margin-bottom: 24px;
-}
-
-#hiker {
+.sportswap-header-image {
   position: absolute;
-  right: 200px;
-  top: 100px;
+  width: 80%;
+  height: 710px;
+  left: 19.7vw;
+  top: 112px;
+  box-shadow: 0px 10px 30px rgba(124, 137, 151, 0.25);
+  border-radius: 5px 0px 0px 5px;
+  object-fit: cover;
+  display: flex;
+  justify-content: flex-end;
 }
 
-#soccer {
-  position: absolute;
-  right: 90px;
-  top: 300px;
-}
 
-#lifting {
-  position: absolute;
-  right: 360px;
-  top: 400px;
-}
