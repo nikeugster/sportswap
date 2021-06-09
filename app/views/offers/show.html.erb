@@ -6,41 +6,32 @@
 
 <div class="show-header-section ml-5 mt-5 mr-5">
   <div class="show-title">
-    <%= link_to offers_path do %>
+    <div class="show-header-icon-title">
+      <%= link_to offers_path do %>
       <i class="fas fa-backward show-icon show-icon-back"></i>
-    <% end %>
-    <h2><%= @offer.title %></h2>
+      <% end %>
+      <div>
+        <h2><%= @offer.title %></h2>
+        <p><%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
+      </div>
+    </div>
   </div>
 
   <div class="show-user-icons">
     <% unless current_user.nil? %>
       <% if current_user.id == @offer.user_id %>
         <%= link_to edit_offer_path(@offer.id) do %>
-          <i class="fas fa-edit show-icon"></i>
+          <i class="fas fa-edit show-icon show-icon-edit"></i>
         <% end %>
         <%= link_to offer_path(@offer), method: :delete do %>
-          <i class="fas fa-trash-alt show-icon"></i>
+          <i class="fas fa-trash-alt show-icon show-icon-edit"></i>
         <% end %>
       <% end %>
     <% end %>
   </div>
 </div>
 
-
-
 <div class="show-infos ml-5 mr-5">
-  <p><%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
-  <% case @offer.compensation_type %>
-  <% when "Price per hour" %>
-    <p>$ <%= @offer.compensation_value %> per hour</p>
-  <% when "Price per day" %>
-    <p>$ <%= @offer.compensation_value %> per day</p>
-  <% when "Free" %>
-    <p>free</p>
-  <% when "Other" %>
-    <p><%= @offer.compensation_value %></p>
-  <% end %>
-  <p><%= @offer.condition %></p>
   <div class="show-profile">
     <%= cl_image_tag @offer.user.photo.key, class: "avatar" %>
     <div class="d-flex flex-column justify-content-center ml-2">
@@ -61,6 +52,21 @@
         <% end %>
       </div>
     </div>
+  </div>
+
+  <div>
+    <% case @offer.compensation_type %>
+    <% when "Price per hour" %>
+      <p class="mb-0"><span class="show-header-price">$ <%= @offer.compensation_value %></span> /hour</p>
+    <% when "Price per day" %>
+      <p class="mb-0"><span class="show-header-price">$ <%= @offer.compensation_value %></span> /day</p>
+    <% when "Free" %>
+      <p class="mb-0"><span class="show-header-price">free</span></p>
+    <% when "Other" %>
+      <p class="mb-0"><span class="show-header-price"><%= @offer.compensation_value %></span></p>
+    <% end %>
+    <p class="show-header-condition"><%= @offer.condition %></p>
+<!--     <p><%= @offer.condition %></p> -->
   </div>
 </div>
 
@@ -157,14 +163,14 @@
   <% end %>
   </div>
   <% if current_user.nil? %>
-    <div class="card-rent col-4 p-4">
+    <div class="card-rent bg-white col-4 p-4">
       <h5 id="card-rent-title">Rent "<%= @offer.title %>"!</h5>
       <p class="pending-text">Please log in to make a booking request.</p>
       <%= link_to "Login", new_user_session_path, class: "btn btn-ghost mb-4" %>
     </div>
   <% else %>
     <% if current_user.id == @offer.user_id  %>
-      <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+      <div class="card-rent bg-white col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
         <h5 id="card-rent-title">This is your listing for<br>"<%= @offer.title %>"</h5>
         <div class="mt-4">
           <% booking_count = 0 %>
@@ -183,7 +189,7 @@
         </div>
       </div>
     <% else %>
-      <div class="card-rent col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
+      <div class="card-rent bg-white col-4 p-4" id='offer-booking-dates' data-unavailable="<%= @offer.unavailable_dates.to_json %>">
         <h5 id="card-rent-title">Rent "<%= @offer.title %>!"</h5>
         <div class="text-left mt-4 my-4">
           <% case @offer.compensation_type %>
