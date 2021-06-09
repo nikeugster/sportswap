@@ -140,7 +140,7 @@
   <% else %>
     <p>No reviews yet...</p>
   <% end %>
-  <% unless @offer.reviews.any? { |review| review.author_id == current_user.id } %>
+  <% unless @offer.reviews.any? #{ |review| review.author_id == current_user.id } %>
     <% unless @offer.reviews.map { |review| review.author_id == current_user.id }.count > 1 %>
       <% if @offer.bookings.any? { |booking| booking.user == current_user } %>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
