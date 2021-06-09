@@ -18,38 +18,38 @@
                 </div>
               </div>
             </div>
-            <h2></h2>
-            <% case booking.status %>
-            <% when "pending" %>
-              <p class="dashboard-pending-text"><%= booking.offer.user.first_name %> is still reviewing your request...</p>
-            <% when "accepted" %>
-              <p class="dashboard-accepted-text"><%= booking.offer.user.first_name %> accepted your booking request!</p>
-              <p class="dashboard-accepted-text">He is now sharing "<%= booking.offer.title %>" with you from <%= booking.starts_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %> to <%= booking.ends_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %>.</p>
-            <% when "declined" %>
-              <p class="dashboard-declined-text"><%= booking.offer.user.first_name %> declined your request...</p>
-            <% end %>
-            <div class="show-profile pt-2">
-              <%= cl_image_tag booking.offer.user.photo.key, class: "avatar" %>
-              <div class="d-flex flex-column justify-content-space-around">
-                <div class="show-name">
-                  <p><%= booking.offer.user.first_name %></p>
-                </div>
-                <div class="show-rating">
-                  <% if booking.offer.user.reviews.any? %>
-                    <% average = booking.offer.user.reviews.map { |review| review.rating }.sum / booking.offer.user.reviews.length %>
-                    <% average.times do %>
-                     <i class="fas fa-star"></i>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="show-profile pt-2">
+                <%= cl_image_tag booking.offer.user.photo.key, class: "avatar" %>
+                <div class="d-flex flex-column justify-content-space-around">
+                  <div class="show-name">
+                    <p><%= booking.offer.user.first_name %></p>
+                  </div>
+                  <div class="show-rating">
+                    <% if booking.offer.user.reviews.any? %>
+                      <% average = booking.offer.user.reviews.map { |review| review.rating }.sum / booking.offer.user.reviews.length %>
+                      <% average.times do %>
+                       <i class="fas fa-star"></i>
+                      <% end %>
+                      <% (5 - average).times do  %>
+                       <i class="far fa-star"></i>
+                      <% end %>
+                    <% else %>
+                      <p>no reviews yet</p>
                     <% end %>
-                    <% (5 - average).times do  %>
-                     <i class="far fa-star"></i>
-                    <% end %>
-                  <% else %>
-                    <p>no reviews yet</p>
-                  <% end %>
+                  </div>
                 </div>
               </div>
-              </div>
+              <% case booking.status %>
+              <% when "pending" %>
+                <p class="dashboard-pending-text"><i class="fas fa-question-circle"></i> reviewing...</p>
+              <% when "accepted" %>
+                <p class="dashboard-accepted-text"><i class="fas fa-check-circle"></i> accepted!</p>
+              <% when "declined" %>
+                <p class="dashboard-declined-text"><i class="fas fa-times-circle"></i> declined!</p>
+              <% end %>
             </div>
+            <p>You requested a booking from <%= booking.starts_at.strftime("%b %d, %H:%M") %> to <%= booking.ends_at.strftime("%b %d, %H:%M") %></p>
           </div>
         </div>
       </div>
