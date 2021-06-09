@@ -47,19 +47,23 @@
     </div>
   </div>
 
-  <div id="bookings-container">
+  <div id="booking-requests-container">
     <h1>My Booking requests:</h1>
     <div class="card-dashboard-booking-section mt-5 p-3 mr-5">
+      <% if current_user.bookings_as_owner.empty? %>
+        <p>You don#t have any open booking requests...</p>
+      <% end %>
       <%= render partial: 'shared/dashboard-booking-requests' %>
     </div>
   </div>
 </div>
 
-<h1 class="ml-5 mt-5">My Bookings:</h1>
-<div class="center-container m-5">
-  <% bookings = Booking.where("user_id = #{current_user.id}") %>
-  <p><%= "No bookings yet..." if bookings.empty? %></p>
-  <% bookings.each do |booking| %>
-    <%= render partial: 'shared/card-dashboard-rentals', locals: {booking: booking} %>
-  <% end %>
-</div>
+<% bookings = Booking.where("user_id = #{current_user.id}") %>
+<% if current_user.bookings.present? %>
+  <h1 class="ml-5 mt-5">My Bookings:</h1>
+  <div class="booking-grid m-5">
+    <% bookings.each do |booking| %>
+      <%= render partial: 'shared/card-dashboard-rentals', locals: {booking: booking} %>
+    <% end %>
+  </div>
+<% end %>
