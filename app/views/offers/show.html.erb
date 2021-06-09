@@ -132,9 +132,6 @@
   <h2>Reviews</h2>
   <% if @offer.reviews.any? %>
     <% @offer.reviews.each do |review| %>
-      <div style="width: 100px;">
-      <p class="col-11 p-4"><%= review.content %></p>
-      </div>
       <%= render partial: 'shared/review-list', locals: {review: review, users: @users} %>
     <% end %>
   <% else %>
