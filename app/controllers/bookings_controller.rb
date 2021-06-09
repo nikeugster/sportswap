@@ -37,8 +37,15 @@ class BookingsController < ApplicationController
     when "accepted" then @booking.status = "accepted"
     when "declined" then @booking.status = "declined"
     end
-    @booking.save
-    redirect_to dashboard_path(anchor: "bookings-container")
+    if @booking.save
+      ActionCable.server.broadcast(
+      "StatusUpdateChannel",
+      booking_status: @booking.status,
+      booking_id: @booking.id
+      )
+
+      redirect_to dashboard_path(anchor: "booking-requests-container")
+    end
   end
 
   def destroy

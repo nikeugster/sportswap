@@ -34,14 +34,16 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 import { initMapbox } from '../plugins/init_mapbox';
 import initChatroomCable from '../channels/chatroom_channel';
 import datepicker from '../plugins/init_flatpickr';
-import scrollBottomMessages from '../plugins/scroll_bottom_messages'
+import scrollBottomMessages from '../plugins/scroll_bottom_messages';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import initStatusUpdateChannel from '../channels/status_update_channel';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   initChatroomCable();
+  initStatusUpdateChannel();
   datepicker();
   previewImageOnFileSelect();
   scrollBottomMessages();
