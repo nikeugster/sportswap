@@ -194,16 +194,16 @@
         <div class="text-left mt-4 my-4">
           <% case @offer.compensation_type %>
           <% when "Price per hour" %>
-            Price: $ <span id="pricedata" data-pricetype="PH"><%= @offer.compensation_value %></span> per hour<br>
+            <i class="fas fa-dollar-sign show-icon-in-card"></i>Price: <span id="pricedata" data-pricetype="PH"><%= @offer.compensation_value %></span> per hour<br>
           <% when "Price per day" %>
-            Price: $ <span id="pricedata" data-pricetype="PD"><%= @offer.compensation_value %></span> per day<br>
+            <i class="fas fa-dollar-sign show-icon-in-card"></i>Price: <span id="pricedata" data-pricetype="PD"><%= @offer.compensation_value %></span> per day<br>
           <% when "Free" %>
-            <div id="pricedata" data-pricetype="FR">For free!</div>
+            <i class="fas fa-dollar-sign show-icon-in-card"><div id="pricedata" data-pricetype="FR">For free!</div>
           <% when "Other" %>
-            Compensation: <span id="pricedata" data-pricetype="OT"><%= @offer.compensation_value %></span><br>
+            <i class="fas fa-dollar-sign show-icon-in-card">Compensation: <span id="pricedata" data-pricetype="OT"><%= @offer.compensation_value %></span><br>
           <% end %>
-          Condition: <%= @offer.condition %><br>
-          Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
+          <i class="fas fa-check show-icon-in-card"></i>Condition: <%= @offer.condition %><br>
+          <i class="fas fa-map-marker-alt show-icon-in-card"></i>Location: <%= @offer.city %>, <%= @offer.country %>, <%= @offer.street %></p>
         </div>
         <%= simple_form_for([@offer, @booking]) do |f| %>
           <%= f.input :starts_at, label: "Pickup:", as: :string, type: :text %>
