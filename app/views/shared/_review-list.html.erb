@@ -1,23 +1,27 @@
 <div>
+  <div class="show-rating">
+    <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>
+    <% (5 - review.rating).times do  %>
+      <i class="far fa-star"></i>
+    <% end %>
+
+  </div>
+
+  <div>
+    <div class="mx-5">
+      <%= review.content %>
+    </div>
+  </div>
+
   <div class="show-profile">
-    <%= cl_image_tag offer.reuser.photo.key, class: "avatar" %>
+    <%= cl_image_tag users.find(review.author_id).photo.key, class: "avatar" %>
     <div class="d-flex flex-column ml-2">
       <div class="show-name">
-        <p><%= offer.user.first_name %></p>
-      </div>
-      <div class="show-rating">
-        <% if offer.user.reviews.any? %>
-          <% average = offer.user.reviews.map { |review| review.rating }.sum / offer.user.reviews.length %>
-          <% average.times do %>
-          <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - average).times do  %>
-          <i class="far fa-star"></i>
-          <% end %>
-        <% else %>
-          <p><em>no reviews yet</em></p>
-        <% end %>
+        <p><%= users.find(review.author_id).first_name %> <%= users.find(review.author_id).last_name %></p>
       </div>
     </div>
   </div>
+
 </div>

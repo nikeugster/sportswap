@@ -133,32 +133,33 @@
 </div>
 
 <div class="d-flex justify-content-between pl-5 pr-5" id="show-p">
-  <div>
+  <div style="width: 50vw;">
   <p class="col-11 p-4"><%= @offer.description %></p>
   <h2>Reviews</h2>
   <% if @offer.reviews.any? %>
     <% @offer.reviews.each do |review| %>
-      <%#= render partial: 'shared/review-list', locals: {offer: offer} %>
-      <p><%= review.content %> | <%= review.rating %></p>
+      <%= render partial: 'shared/review-list', locals: {review: review, users: @users} %>
     <% end %>
   <% else %>
     <p>No reviews yet...</p>
   <% end %>
-  <% unless @offer.reviews.any? { |review| review.user != current_user } %>
-    <% if @offer.bookings.any? { |booking| booking.user == current_user } %>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
-      <div class="bs-example-modal-lg modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <h2>Add a review</h2>
-            <%= simple_form_for([@offer, @offer.reviews.build]) do |f| %>
-              <%= f.input :rating, collection: [ 1, 2, 3, 4, 5 ] %>
-              <%= f.input :content %>
-              <%= f.button :submit %>
-            <% end %>
+  <% unless @offer.reviews.any? #{ |review| review.author_id == current_user.id } %>
+    <% unless @offer.reviews.map { |review| review.author_id == current_user.id }.count > 1 %>
+      <% if @offer.bookings.any? { |booking| booking.user == current_user } %>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
+        <div class="bs-example-modal-lg modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content p-3">
+              <h2>Add a review</h2>
+              <%= simple_form_for([@offer, @offer.reviews.build]) do |f| %>
+                <%= f.input :rating, collection: [ 1, 2, 3, 4, 5 ] %>
+                <%= f.input :content, input_html: { maxlength: 550, style: 'height: -webkit-fill-available' } %>
+                <%= f.button :submit, class: "card-rent-btn" %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
   </div>

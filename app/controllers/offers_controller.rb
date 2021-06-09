@@ -26,6 +26,9 @@ class OffersController < ApplicationController
 
   def show
     @booking = Booking.new
+    @review = Review.new
+    @users = User.all
+    @author = @review.author_id
     respond_to do |format|
       format.html
       format.json { render json: { arts: @arts } }

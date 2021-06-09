@@ -9,6 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.offer = @offer
     @review.user = @offer.user
+    @review.author_id = current_user.id
     if @review.save
       redirect_to offer_path(@offer)
     end
