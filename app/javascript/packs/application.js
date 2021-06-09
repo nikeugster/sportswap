@@ -35,6 +35,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import initChatroomCable from '../channels/chatroom_channel';
 import datepicker from '../plugins/init_flatpickr';
 import scrollBottomMessages from '../plugins/scroll_bottom_messages'
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -44,7 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   datepicker();
   previewImageOnFileSelect();
   scrollBottomMessages();
+  initAutocomplete();
 });
-
-import { initAutocomplete } from '../plugins/init_autocomplete';
-initAutocomplete();
