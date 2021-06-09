@@ -1,17 +1,20 @@
 <div>
+   <div class="show-rating">
+    <%= review.rating.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>
+    <% (5 - review.rating).times do  %>
+      <i class="far fa-star"></i>
+    <% end %>
+  </div>
+  <div>
+    <%= review.content %>
+  </div>
   <div class="show-profile">
-    <%= cl_image_tag offer.reuser.photo.key, class: "avatar" %>
+    <%= cl_image_tag reviewer.photo.key, class: "avatar" %>
     <div class="d-flex flex-column ml-2">
       <div class="show-name">
-        <p><%= offer.user.first_name %></p>
-      </div>
-      <div class="show-rating">
-        <%= review.rating.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
-        <% (5 - review.rating).times do  %>
-          <i class="far fa-star"></i>
-        <% end %>
+        <p><%= reviewer.first_name %> <%= reviewer.last_name %></p>
       </div>
     </div>
   </div>
