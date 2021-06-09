@@ -1,7 +1,30 @@
+.show-header-icon-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.show-header-condition {
+  border-radius: 100px;
+  background-color: #E5EAF0;
+  color: #5d5d5d;
+  margin-right: 5px;
+  padding: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-weight: 300;
+  font-size: 10px !important;
+}
+
 .show-infos {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.show-header-price {
+  font-weight: 600;
+  font-size: 27px;
 }
 
 .show-profile {

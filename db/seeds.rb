@@ -11,6 +11,7 @@ require "open-uri"
 puts "Cleaning the database"
 
 Message.delete_all
+Review.delete_all
 Chatroom.delete_all
 Booking.delete_all
 Offer.delete_all

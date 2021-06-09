@@ -28,7 +28,6 @@ const initChatroomCable = () => {
 
     consumer.subscriptions.create({ channel: "ChatroomChannel", id: chatroomId }, {
       received(messageHTML) {
-        console.log(messageHTML)
         insertIntoDOM(messageHTML, currentUserId, messagesContainer)
         scrollBottomMessages()
       },

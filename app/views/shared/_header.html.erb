@@ -1,6 +1,6 @@
 <header>
   <div class="hero-group">
-    <h1><strong>Sportswap!</strong></h1>
+    <h1>Sportswap!</h1>
     <h2>Find sports equipment nearby</h2>
     <%= form_tag offers_path, method: :get, class: "search-form mt-3" do %>
       <%= text_field_tag :equipment,
@@ -19,9 +19,7 @@
     <% end %>
   </div>
 
-  <div class="illustrations">
-    <%= image_tag("hiker-man.png", alt: "Colorful illustration of a man hiking", id: "hiker") %>
-    <%= image_tag("lifting.png", alt: "Colorful illustration of a woman lifting weights", id: "lifting") %>
-    <%= image_tag("soccer.png", alt: "Colorful illustration of a woman playing soccer", id: "soccer") %>
+  <div>
+    <%= image_tag("sportswap-jump2.png", alt: "Header showing jumping ski athlete", class: "sportswap-header-image") %>
   </div>
 </header>

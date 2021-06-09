@@ -16,16 +16,12 @@ class BookingsController < ApplicationController
     case @booking.compensation_type
     when "Price per hour"
       @booking.compensation_value = (@offer.compensation_value.to_i * ((@booking.ends_at.to_i - @booking.starts_at.to_i) / 60 / 60)).to_s
-      $modaltype = "Price per hour: $ "
     when "Price per day"
       @booking.compensation_value = (@offer.compensation_value.to_i * ((@booking.ends_at.to_i - @booking.starts_at.to_i) / 24 / 60 / 60)).to_s
-      $modaltype = "Price per day: $ "
     when "Free"
       @booking.compensation_value = "Free"
-      $modaltype = ""
     when "Other"
       @booking.compensation_value = @offer.compensation_value
-      $modaltype = "Compensation: "
     end
     $modalvalue = @booking.compensation_value
     $modalstart = @booking.starts_at
@@ -41,8 +37,15 @@ class BookingsController < ApplicationController
     when "accepted" then @booking.status = "accepted"
     when "declined" then @booking.status = "declined"
     end
-    @booking.save
-    redirect_to dashboard_path(anchor: "bookings-container")
+    if @booking.save
+      ActionCable.server.broadcast(
+      "StatusUpdateChannel",
+      booking_status: @booking.status,
+      booking_id: @booking.id
+      )
+
+      redirect_to dashboard_path(anchor: "booking-requests-container")
+    end
   end
 
   def destroy

@@ -11,17 +11,34 @@
 }
 
 .offer-confirmation-modal {
-  height: 50vh;
-  width: 50vw;
+  height: 65vh;
+  width: 60vw;
   background-color: white;
+  border-radius: 5px;
 }
 
 .confirmation-photo {
-  width: 100%;
+  width: 94%;
   height: 60%;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   object-fit: cover;
 }
 
+.offer-confirmation-title-red {
+  color: $sportswap-red !important;
+}
 
+.offer-confirmation-modal-text {
+  margin-top: 24px;
+  padding-bottom: 14px;
+}
+
+.offer-confirmation-list-container {
+  display: flex;
+  align-items: center;
+  p {
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+}
