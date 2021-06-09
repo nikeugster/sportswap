@@ -178,9 +178,9 @@
             <% booking_count += 1 if booking[:status] == "pending" %>
           <% end %>
           <% if booking_count == 1 %>
-            <p>You have <%= booking_count %> pending booking.</p>
+            <p class="offer-confirmation-title-red">You have <strong><%= booking_count %></strong> pending booking.</p>
           <% elsif booking_count > 1 %>
-            <p>You have <%= booking_count %> pending bookings.</p>
+            <p class="offer-confirmation-title-red">You have <strong><%= booking_count %></strong> pending bookings.</p>
           <% end %>
           <p>Go to your dashboard to manage your bookings:</p>
           <div class="card-rent-btn">
