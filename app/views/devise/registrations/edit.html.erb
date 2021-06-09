@@ -34,6 +34,9 @@
                     hint: "we need your current password to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
+        <div class="photo-upload-centered">
+        <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input', multiple: true }, label_html: { class: 'offer-form-upload-photo mr-4', id: 'until-five' }, label: 'edit your profile photo' %>
+        </div>
       </div>
   </div>
 
