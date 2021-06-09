@@ -26,6 +26,12 @@ h1 {
   width: 50%;
 }
 
-#bookings-container {
+#booking-requests-container {
   width: 50%;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
 }
