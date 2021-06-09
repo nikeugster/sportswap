@@ -48,7 +48,7 @@ class BookingsController < ApplicationController
       booking_id: @booking.id
       )
 
-      redirect_to dashboard_path(anchor: "bookings-requests-container")
+      redirect_to dashboard_path(anchor: "booking-requests-container")
     end
   end
 
