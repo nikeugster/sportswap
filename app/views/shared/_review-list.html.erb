@@ -1,15 +1,20 @@
-<div class="d-flex flex-column" style="width: 50vw;">
-  <div class="show-rating" style="width: 10vw;">
+<div>
+  <div class="show-rating bg-success">
     <% review.rating.times do %>
       <i class="fas fa-star"></i>
     <% end %>
     <% (5 - review.rating).times do  %>
       <i class="far fa-star"></i>
     <% end %>
+
   </div>
-  <div style="width: 100px;">
-    <p><%= review.content, size: 100 %></p>
+
+  <div class="bg-primary">
+    <div class="mx-5">
+      <%= review.content %>
+    </div>
   </div>
+
   <div class="show-profile">
     <%= cl_image_tag users.find(review.author_id).photo.key, class: "avatar" %>
     <div class="d-flex flex-column ml-2">
@@ -18,4 +23,5 @@
       </div>
     </div>
   </div>
+
 </div>
