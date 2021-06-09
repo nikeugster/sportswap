@@ -11,7 +11,7 @@
 }
 
 .offer-confirmation-modal {
-  height: 60vh;
+  height: 65vh;
   width: 60vw;
   background-color: white;
   border-radius: 5px;
@@ -29,10 +29,16 @@
   color: $sportswap-red !important;
 }
 
-.order-confirmation-modal-textin {
-  padding-left: 37px;
+.offer-confirmation-modal-text {
+  margin-top: 24px;
+  padding-bottom: 14px;
 }
 
-.offer-confirmation-modal-text {
-  padding-bottom: 14px;
+.offer-confirmation-list-container {
+  display: flex;
+  align-items: center;
+  p {
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
 }
