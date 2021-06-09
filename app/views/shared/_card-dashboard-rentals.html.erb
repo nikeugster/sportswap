@@ -40,7 +40,8 @@
                   </div>
                 </div>
               </div>
-              <div id="booking-status">
+              <% booking_id = "booking-status-#{booking.id}" %>
+              <div id="<%= booking_id %>">
                 <% case booking.status %>
                 <% when "pending" %>
                   <p class="dashboard-pending-text"><i class="fas fa-question-circle"></i> reviewing...</p>
