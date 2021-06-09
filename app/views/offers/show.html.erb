@@ -132,14 +132,14 @@
   <h2>Reviews</h2>
   <% if @offer.reviews.any? %>
     <% @offer.reviews.each do |review| %>
-      <%#= render partial: 'shared/review-list', locals: {offer: offer} %>
+      <%= render partial: 'shared/review-list', locals: {review: review, users: @users} %>
       <p><%= review.content %> | <%= review.rating %></p>
     <% end %>
   <% else %>
     <p>No reviews yet...</p>
   <% end %>
-  <% unless @offer.reviews.any? { |review| review.user == current_user } %>
-    <% unless @offer.reviews.map { |review| review.user == current_user }.count > 1 %>
+  <% unless @offer.reviews.any? { |review| review.author_id == current_user } %>
+    <% unless @offer.reviews.map { |review| review.author_id == current_user }.count > 1 %>
       <% if @offer.bookings.any? { |booking| booking.user == current_user } %>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
         <div class="bs-example-modal-lg modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
