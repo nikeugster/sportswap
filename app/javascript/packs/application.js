@@ -37,6 +37,7 @@ import { datepicker } from '../plugins/init_flatpickr';
 import { scrollBottomMessages } from '../plugins/scroll_bottom_messages';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initStatusUpdateChannel } from '../channels/status_update_channel';
+import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -48,4 +49,5 @@ document.addEventListener('turbolinks:load', () => {
   previewImageOnFileSelect();
   scrollBottomMessages();
   initAutocomplete();
+  initSelect2();
 });

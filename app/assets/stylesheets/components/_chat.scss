@@ -65,6 +65,10 @@
   }
 }
 
+.message {
+  word-wrap: break-word;
+}
+
 #messages {
   overflow: auto;
   display: flex;

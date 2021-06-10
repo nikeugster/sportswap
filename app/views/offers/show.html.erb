@@ -133,7 +133,7 @@
 </div>
 
 <div class="d-flex justify-content-between pl-5 pr-5 pt-3" id="show-p">
-  <div class="col-7">
+  <div class="pl-0 col-7">
     <p class="pl-0"><%= @offer.description %></p>
     <h3 class= "review-headline mt-4 mb-3 ">Reviews</h3>
     <% if @offer.reviews.any? %>
@@ -145,7 +145,11 @@
       <% end %>
       <hr class="pb-3">
     <% else %>
-      <p>No reviews yet...</p>
+    <% if current_user.nil? || current_user.id != @offer.user_id %>
+      <p>Book “<%= @offer.title %>" and be the first to leave a review.</p>
+    <% else %>
+      <p>Your listing “<%= @offer.title %>" has no reviews yet.</p>
+    <% end %>
     <% end %>
     <% unless @offer.reviews.any? %>
       <% unless @offer.reviews.any? { |review| review.author_id == current_user.id } %>
