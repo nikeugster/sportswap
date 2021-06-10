@@ -12,7 +12,14 @@
             <%= link_to offer_path(booking.offer.id) do %>
               <h2><%= booking.offer.title.truncate(30) %></h2>
             <% end %>
-            <h2><i class="fas fa-dollar-sign"></i> <%= booking.offer.compensation_value %></h2>
+            <% case booking.offer.compensation_type %>
+            <% when "Price per hour" %>
+              <h2 class="card-price"><i class="fas fa-dollar-sign"></i> <%= booking.offer.compensation_value %> / hour</h2>
+            <% when "Price per day" %>
+              <h2 class="card-price"><i class="fas fa-dollar-sign"></i> <%= booking.offer.compensation_value %> / day</h2>
+            <% when "Free", "Other" %>
+              <h2 class="card-price"><%= booking.offer.compensation_value %></h2>
+            <% end %>
           </div>
           <div class="card-title-info">
             <div class="card-category-condition">

@@ -7,7 +7,14 @@
       <div class="card-dashboard-product-rightside">
         <div class="product-infos pl-3">
         <h2 class="mb-2"><%= offer.title.truncate(30) %></h2>
-        <h2><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %></h2>
+        <% case offer.compensation_type %>
+        <% when "Price per hour" %>
+          <h2 class="card-price"><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %> / hour</h2>
+        <% when "Price per day" %>
+          <h2 class="card-price"><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %> / day</h2>
+        <% when "Free", "Other" %>
+          <h2 class="card-price"><%= offer.compensation_value %></h2>
+        <% end %>
         <div class="card-title-info">
           <div class="card-category-condition">
             <p class="card-tag"><%= offer.category %></p>
