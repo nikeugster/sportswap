@@ -147,22 +147,24 @@
     <% else %>
       <p>No reviews yet...</p>
     <% end %>
-    <% unless @offer.reviews.any? { |review| review.author_id == current_user.id } %>
-      <% unless @offer.reviews.map {|review| review.author_id == current_user.id }.count > 1 %>
-        <% if @offer.bookings.any? { |booking| booking.user == current_user } %>
-          <button type="button" class="btn btn-ghost" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
-          <div class="bs-example-modal-lg modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content p-3">
-                <h2 class="mb-4">Add a review</h2>
-                <%= simple_form_for([@offer, @offer.reviews.build]) do |f| %>
-                  <%= f.input :rating, collection: [ 1, 2, 3, 4, 5 ], label: "Please rate your experience from 1 (poor) to 5 (excellent):" %>
-                  <%= f.input :content, input_html: { maxlength: 550, style: 'height: -webkit-fill-available' }, label: "Tell us about your experience:"  %>
-                  <%= f.button :submit, class: "btn btn-ghost mt-4" %>
-                <% end %>
+    <% unless @offer.reviews.any? %>
+      <% unless @offer.reviews.any? { |review| review.author_id == current_user.id } %>
+        <% unless @offer.reviews.map {|review| review.author_id == current_user.id }.count > 1 %>
+          <% if @offer.bookings.any? { |booking| booking.user == current_user } %>
+            <button type="button" class="btn btn-ghost" data-toggle="modal" data-target=".bs-example-modal-lg">add review</button>
+            <div class="bs-example-modal-lg modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content p-3">
+                  <h2 class="mb-4">Add a review</h2>
+                  <%= simple_form_for([@offer, @offer.reviews.build]) do |f| %>
+                    <%= f.input :rating, collection: [ 1, 2, 3, 4, 5 ], label: "Please rate your experience from 1 (poor) to 5 (excellent):" %>
+                    <%= f.input :content, input_html: { maxlength: 550, style: 'height: -webkit-fill-available' }, label: "Tell us about your experience:"  %>
+                    <%= f.button :submit, class: "btn btn-ghost mt-4" %>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
