@@ -1,27 +1,29 @@
-<div>
-  <div class="show-rating">
-    <% review.rating.times do %>
-      <i class="fas fa-star"></i>
-    <% end %>
-    <% (5 - review.rating).times do  %>
-      <i class="far fa-star"></i>
-    <% end %>
-
-  </div>
-
-  <div>
-    <div class="mx-5">
-      <%= review.content %>
-    </div>
-  </div>
-
-  <div class="show-profile">
-    <%= cl_image_tag users.find(review.author_id).photo.key, class: "avatar" %>
-    <div class="d-flex flex-column ml-2">
-      <div class="show-name">
-        <p><%= users.find(review.author_id).first_name %> <%= users.find(review.author_id).last_name %></p>
+<div class="reviews-container">
+  <div class="reviews-profile col-4">
+      <div class="show-profile mb-4">
+      <%= cl_image_tag users.find(review.author_id).photo.key, class: "avatar" %>
+      <div class="d-flex flex-column ml-2">
+        <div class="show-name">
+          <p><%= users.find(review.author_id).first_name %> <%= users.find(review.author_id).last_name %></p>
+        </div>
       </div>
     </div>
   </div>
 
+  <div class="col-8">
+    <div class="show-rating">
+      <% review.rating.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - review.rating).times do  %>
+        <i class="far fa-star"></i>
+      <% end %>
+
+    </div>
+    <div>
+      <div class="rating-text">
+        <%= review.content %>
+      </div>
+    </div>
+  </div>
 </div>
