@@ -19,7 +19,7 @@
               <p class="card-tag"><%= booking.offer.category %></p>
               <p class="card-tag"><%= booking.offer.condition %></p>
             </div>
-            <%= link_to booking_path(booking), method: :delete, remote: true, :data => {:confirm => 'Are you sure? This will delete/cancel the booking request'} do %>
+            <%= link_to booking_path(booking), method: :delete, remote: true, class: "dashboard-links", :data => {:confirm => 'Are you sure? This will delete/cancel the booking request.'} do %>
               <i class="fas fa-trash-alt dashboard-declined-text"></i>
             <% end %>
           </div>

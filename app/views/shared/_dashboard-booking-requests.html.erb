@@ -6,10 +6,10 @@
         <p>from <%= booking.starts_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %> to <%= booking.ends_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %>.</p>
       </div>
       <div class="dashboard-booking-buttons">
-        <%= link_to booking_path(booking, "declined"), method: :patch, remote: true do %>
+        <%= link_to booking_path(booking, "declined"), method: :patch, remote: true, class: "dashboard-links" do %>
           <i class="far fa-times-circle dashboard-declined-text"></i>
         <% end %>
-        <%= link_to booking_path(booking, "accepted"), method: :patch, remote: true do %>
+        <%= link_to booking_path(booking, "accepted"), method: :patch, remote: true, class: "dashboard-links" do %>
           <i class="far fa-check-circle dashboard-accepted-text"></i>
         <% end %>
       </div>
@@ -19,7 +19,7 @@
         <p>from <%= booking.starts_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %> to <%= booking.ends_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %>.</p>
       </div>
       <div class="dashboard-booking-buttons">
-        <%= link_to booking_path(booking), method: :delete, remote: true do %>
+        <%= link_to booking_path(booking), method: :delete, remote: true, class: "dashboard-links", :data => {:confirm => 'Are you sure? This will delete/cancel the booking request.'} do %>
           <i class="fas fa-trash-alt dashboard-declined-text"></i>
         <% end %>
         <i class="fas fa-check-circle dashboard-accepted-text"></i>
@@ -30,7 +30,7 @@
         <p>from <%= booking.starts_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %> to <%= booking.ends_at.to_datetime.strftime("%a. %d.%m.%Y at %R") %>.</p>
       </div>
       <div class="dashboard-booking-buttons">
-        <%= link_to booking_path(booking), method: :delete, remote: true, :data => {:confirm => 'Are you sure? This will delete/cancel the booking request'} do %>
+        <%= link_to booking_path(booking), method: :delete, remote: true, class: "dashboard-links", :data => {:confirm => 'Are you sure? This will delete/cancel the booking request.'} do %>
           <i class="fas fa-trash-alt dashboard-declined-text"></i>
         <% end %>
         <i class="fas fa-times-circle dashboard-declined-text"></i>
