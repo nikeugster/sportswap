@@ -68,17 +68,17 @@ function datepicker() {
           if (price_element.dataset.pricetype === "PH") {
             const total_price = price * ((end_date_object - start_date_object) / 1000 / 60 / 60)
             const total_element = document.querySelector("#total-price");
-            total_element.innerText = `Total price:  $ ${total_price}`;
+            total_element.innerText = `Total price:  $ ${total_price.toFixed(2)}`;
             const price_dataset = document.getElementById("book-button");
             price_dataset.dataset.pricetype = "PH"
-            price_dataset.dataset.totalprice = total_price;
+            price_dataset.dataset.totalprice = total_price.toFixed(2);
           } else if (price_element.dataset.pricetype === "PD") {
             const total_price = price * ((end_date_object - start_date_object) / 1000 / 60 / 60 / 24)
             const total_element = document.querySelector("#total-price");
-            total_element.innerText = `Total price:  $ ${total_price}`;
+            total_element.innerText = `Total price:  $ ${total_price.toFixed(2)}`;
             const price_dataset = document.getElementById("book-button");
             price_dataset.dataset.pricetype = "PD"
-            price_dataset.dataset.totalprice = total_price;
+            price_dataset.dataset.totalprice = total_price.toFixed(2);
           } else if (price_element.dataset.pricetype === "FR") {
             const price_dataset = document.getElementById("book-button");
             price_dataset.dataset.pricetype = "FR"
