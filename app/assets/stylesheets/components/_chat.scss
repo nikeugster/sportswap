@@ -10,6 +10,7 @@
 .chat-rooms {
   width: 400px;
   border-right: 1px solid rgba(0,0,0,0.1);
+  overflow: auto;
   a {
     text-decoration: none;
   }
