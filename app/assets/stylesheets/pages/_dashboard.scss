@@ -6,11 +6,13 @@ h1 {
 .dashboard-accepted-text {
   color: $green;
   margin: 0;
+  text-align: justify;
 }
 
 .dashboard-declined-text {
   color: $sportswap-red;
   margin: 0;
+  text-align: justify;
 }
 
 .dashboard-pending-text {
@@ -19,14 +21,13 @@ h1 {
 
 .listings-split-view {
   display: flex;
-  justify-content: space-between;
 }
 
 .listings-container {
   width: 50%;
 }
 
-#booking-requests-container {
+.open-bookings {
   width: 50%;
 }
 
