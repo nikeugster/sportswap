@@ -478,7 +478,7 @@ puts "Created review 2 for '#{chrissie_offer_3.title}'"
 
 juergen_offer_1_review_1 = Review.new(
   rating: 5,
-  content: "The Trio Rex is state-of-the-art and I didn't expect to find it in Berlin tbh, as it's used for heavy-duty fishing in deeper waters. What a find!"
+  content: "The Trio Rex is state-of-the-art and I didn't expect to find it in Berlin tbh, as it's used for heavy-duty fishing in deeper waters. What a find!",
   user_id: juergen.id,
   offer_id: 4,
   author_id: 4
@@ -502,7 +502,7 @@ puts "Created review 2 for '#{juergen_offer_1.title}'"
 
 juergen_offer_2_review_1 = Review.new(
   rating: 5,
-  content: "What a great tent for the price of a sixpack of beers! Mr. Dose stayed with us and drank them with us. What a chill guy, what a great time!"
+  content: "What a great tent for the price of a sixpack of beers! Mr. Dose stayed with us and drank them with us. What a chill guy, what a great time!",
   user_id: juergen.id,
   offer_id: 5,
   author_id: 4
@@ -526,7 +526,7 @@ puts "Created review 2 for '#{juergen_offer_2.title}'"
 
 juergen_offer_3_review_1 = Review.new(
   rating: 4,
-  content: "Not the greatest condition really, but did its job for the mild waves I faced. Price is good though and Mr. Dose is very kind!"
+  content: "Not the greatest condition really, but did its job for the mild waves I faced. Price is good though and Mr. Dose is very kind!",
   user_id: juergen.id,
   offer_id: 6,
   author_id: 4
@@ -550,7 +550,7 @@ puts "Created review 2 for '#{juergen_offer_3.title}'"
 
 juergen_offer_4_review_1 = Review.new(
   rating: 5,
-  content: "Amazing! Usually you'd pay 100 EUR+ and day for this! Mr. Dose is such a good person, and he gives you a good instruction to the intricacies of this high-end windsurf."
+  content: "Amazing! Usually you'd pay 100 EUR+ and day for this! Mr. Dose is such a good person, and he gives you a good instruction to the intricacies of this high-end windsurf.",
   user_id: juergen.id,
   offer_id: 7,
   author_id: 4
@@ -574,7 +574,7 @@ puts "Created review 2 for '#{juergen_offer_4.title}'"
 
 julian_offer_1_review_1 = Review.new(
   rating: 5,
-  content: "Julian is a very good guide for the area. We actually invited him to join for the day on the sailing boat. He really doesn't do this for money, but for fun."
+  content: "Julian is a very good guide for the area. We actually invited him to join for the day on the sailing boat. He really doesn't do this for money, but for fun.",
   user_id: julian.id,
   offer_id: 8,
   author_id: 4
@@ -598,7 +598,7 @@ puts "Created review 2 for '#{julian_offer_1.title}'"
 
 julian_offer_2_review_1 = Review.new(
   rating: 5,
-  content: "I yearned to hit the links since I moved to Germany a couple of years ago. Somehow I never found the time. After a day on Julian's yacht, he was kind enough to lend me his Callaway drive!"
+  content: "I yearned to hit the links since I moved to Germany a couple of years ago. Somehow I never found the time. After a day on Julian's yacht, he was kind enough to lend me his Callaway drive!",
   user_id: julian.id,
   offer_id: 9,
   author_id: 4
@@ -622,7 +622,7 @@ puts "Created review 2 for '#{julian_offer_2.title}'"
 
 sandra_offer_1_review_1 = Review.new(
   rating: 5,
-  content: "It's been years since I was on skates! And Sandra knew the perfect occasion to try them out: An 80's skating party. How cool is that?"
+  content: "It's been years since I was on skates! And Sandra knew the perfect occasion to try them out: An 80's skating party. How cool is that?",
   user_id: sandra.id,
   offer_id: 10,
   author_id: 1
@@ -646,7 +646,7 @@ puts "Created review 2 for '#{sandra_offer_1.title}'"
 
 sandra_offer_2_review_1 = Review.new(
   rating: 5,
-  content: "What a great board! Mine is already a bit old and I wanted to try a Salomon for some time now. And wow, what a difference it is!"
+  content: "What a great board! Mine is already a bit old and I wanted to try a Salomon for some time now. And wow, what a difference it is!",
   user_id: sandra.id,
   offer_id: 11,
   author_id: 1
@@ -670,7 +670,7 @@ puts "Created review 2 for '#{sandra_offer_2.title}'"
 
 sandra_offer_3_review_1 = Review.new(
   rating: 5,
-  content: "You really want to use a helmet when skydiving. Not having your eyes tear up from the wind makes the experience so much more pleasurable."
+  content: "You really want to use a helmet when skydiving. Not having your eyes tear up from the wind makes the experience so much more pleasurable.",
   user_id: sandra.id,
   offer_id: 12,
   author_id: 1
