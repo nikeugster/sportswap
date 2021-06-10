@@ -32,11 +32,11 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
-import { initChatroomCable } from '../channels/chatroom_channel';
-import { datepicker } from '../plugins/init_flatpickr';
-import { scrollBottomMessages } from '../plugins/scroll_bottom_messages';
+import initChatroomCable from '../channels/chatroom_channel';
+import datepicker from '../plugins/init_flatpickr';
+import scrollBottomMessages from '../plugins/scroll_bottom_messages';
 import { initAutocomplete } from '../plugins/init_autocomplete';
-import { initStatusUpdateChannel } from '../channels/status_update_channel';
+import initStatusUpdateChannel from '../channels/status_update_channel';
 import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
