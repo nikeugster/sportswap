@@ -1,5 +1,5 @@
 import consumer from "./consumer";
-import { scrollBottomMessages } from "../plugins/scroll_bottom_messages";
+import scrollBottomMessages from "../plugins/scroll_bottom_messages";
 
 const insertIntoDOM = (messageHTML, currentUserId, messages) => {
   const div = document.createElement('div');
