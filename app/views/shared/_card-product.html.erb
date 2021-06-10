@@ -9,7 +9,7 @@
           <div class="card-product-infos pl-3">
             <div class="card-title-location">
               <h2><%= offer.title %></h2>
-              <h2><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %></h2>
+              <h2 class="price-text"><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %></h2>
             </div>
             <div class="card-title-info">
               <div class="card-category-condition">
@@ -18,10 +18,7 @@
               </div>
               <p class="card-tag-invisible"><%#= offer.location %></p>
             </div>
-            <div class="card-description">
-                <p><%= offer.description[0..100] %>...</p>
-            </div>
-            <div class="show-profile">
+            <div class="show-profile product-index-show-profile">
               <%= cl_image_tag offer.user.photo.key, class: "avatar" %>
               <div class="d-flex flex-column ml-2">
                 <div class="show-name">
@@ -41,6 +38,9 @@
                   <% end %>
                 </div>
               </div>
+            </div>
+            <div class="card-description">
+                <p><%= offer.description[0..100] %>...</p>
             </div>
           </div>
         </div>
