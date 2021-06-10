@@ -1,5 +1,5 @@
 <div class="card-whole-link col-12" style="padding: 0">
-  <div class="card-product p-3 mb-3">
+  <div class="card-dashboard p-3 mb-3">
   <%= link_to offer_path(booking.offer.id), class: "rental-link" do %>
     <% if booking.offer.photos.attached? %>
       <%= cl_image_tag booking.offer.photos[0].key, id: "card-product-img-rental" %>

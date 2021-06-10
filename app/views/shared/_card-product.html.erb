@@ -23,12 +23,8 @@
                 <p class="card-tag"><%= offer.category %></p>
                 <p class="card-tag"><%= offer.condition %></p>
               </div>
-              <p class="card-tag-invisible"><%#= offer.location %></p>
             </div>
-            <div class="card-description">
-                <p><%= offer.description[0..100] %>...</p>
-            </div>
-            <div class="show-profile">
+            <div class="show-profile product-index-show-profile">
               <%= cl_image_tag offer.user.photo.key, class: "avatar" %>
               <div class="d-flex flex-column ml-2">
                 <div class="show-name">
@@ -48,6 +44,9 @@
                   <% end %>
                 </div>
               </div>
+            </div>
+            <div class="card-description">
+                <p><%= offer.description[0..100] %>...</p>
             </div>
           </div>
         </div>
