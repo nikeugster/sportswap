@@ -575,7 +575,7 @@ puts "Created review 2 for '#{juergen_offer_4.title}'"
 julian_offer_1_review_1 = Review.new(
   rating: 5,
   content: "Julian is a very good guide for the area. We actually invited him to join for the day on the sailing boat. He really doesn't do this for money, but for fun."
-  user_id: juergen.id,
+  user_id: julian.id,
   offer_id: 8,
   author_id: 4
 )
@@ -587,9 +587,9 @@ puts "Created review 1 for '#{julian_offer_1.title}'"
 julian_offer_1_review_2 = Review.new(
   rating: 5,
   content: "Rügen is a beautiful area, Julian's yacht is the perfect vehicle to explore its shores! Thank you again, Julian, for being such a sport and forgiving me for breaking a window..",
-  user_id: juergen.id,
+  user_id: julian.id,
   offer_id: 8,
-  author_id: 3
+  author_id: 2
 )
 
 julian_offer_1_review_2.save!
@@ -599,8 +599,8 @@ puts "Created review 2 for '#{julian_offer_1.title}'"
 julian_offer_2_review_1 = Review.new(
   rating: 5,
   content: "I yearned to hit the links since I moved to Germany a couple of years ago. Somehow I never found the time. After a day on Julian's yacht, he was kind enough to lend me his Callaway drive!"
-  user_id: juergen.id,
-  offer_id: 8,
+  user_id: julian.id,
+  offer_id: 9,
   author_id: 4
 )
 
@@ -610,12 +610,84 @@ puts "Created review 1 for '#{julian_offer_2.title}'"
 
 julian_offer_2_review_2 = Review.new(
   rating: 5,
-  content: "Rügen is a beautiful area, Julian's yacht is the perfect vehicle to explore its shores! Thank you again, Julian, for being such a sport and forgiving me for breaking a window..",
-  user_id: juergen.id,
-  offer_id: 8,
-  author_id: 3
+  content: "I'm quite the beginner when it comes to Golf. Julian actually used to be a pro and gave me a free lesson along with the club! 10/5",
+  user_id: julian.id,
+  offer_id: 9,
+  author_id: 2
 )
 
 julian_offer_2_review_2.save!
 
 puts "Created review 2 for '#{julian_offer_2.title}'"
+
+sandra_offer_1_review_1 = Review.new(
+  rating: 5,
+  content: "It's been years since I was on skates! And Sandra knew the perfect occasion to try them out: An 80's skating party. How cool is that?"
+  user_id: sandra.id,
+  offer_id: 10,
+  author_id: 1
+)
+
+sandra_offer_1_review_1.save!
+
+puts "Created review 1 for '#{sandra_offer_1.title}'"
+
+sandra_offer_1_review_2 = Review.new(
+  rating: 5,
+  content: "Me feet aren't that big and Sandra's skates were a perfect fit. It's just great skating in beautiful Munich! Thx Sandra!",
+  user_id: sandra.id,
+  offer_id: 10,
+  author_id: 2
+)
+
+sandra_offer_1_review_2.save!
+
+puts "Created review 2 for '#{sandra_offer_1.title}'"
+
+sandra_offer_2_review_1 = Review.new(
+  rating: 5,
+  content: "What a great board! Mine is already a bit old and I wanted to try a Salomon for some time now. And wow, what a difference it is!"
+  user_id: sandra.id,
+  offer_id: 11,
+  author_id: 1
+)
+
+sandra_offer_2_review_1.save!
+
+puts "Created review 1 for '#{sandra_offer_2.title}'"
+
+sandra_offer_2_review_2 = Review.new(
+  rating: 5,
+  content: "Because we had a trip planned outside of ski resorts, it was perfect to rent a snowboard here in Berlin. The snowboard is super fast and in great condition.",
+  user_id: sandra.id,
+  offer_id: 11,
+  author_id: 3
+)
+
+sandra_offer_2_review_2.save!
+
+puts "Created review 2 for '#{sandra_offer_2.title}'"
+
+sandra_offer_3_review_1 = Review.new(
+  rating: 5,
+  content: "You really want to use a helmet when skydiving. Not having your eyes tear up from the wind makes the experience so much more pleasurable."
+  user_id: sandra.id,
+  offer_id: 12,
+  author_id: 1
+)
+
+sandra_offer_3_review_1.save!
+
+puts "Created review 1 for '#{sandra_offer_3.title}'"
+
+sandra_offer_3_review_2 = Review.new(
+  rating: 5,
+  content: "Thanks again, Sandra, for giving me an extra day with the helmet! The second day at the skydiving school wouldn't have been the same without your helmet!",
+  user_id: sandra.id,
+  offer_id: 12,
+  author_id: 3
+)
+
+sandra_offer_3_review_2.save!
+
+puts "Created review 2 for '#{sandra_offer_3.title}'"
