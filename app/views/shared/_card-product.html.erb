@@ -8,15 +8,21 @@
         <div class="card-product-rightside">
           <div class="card-product-infos pl-3">
             <div class="card-title-location">
-              <h2><%= offer.title %></h2>
-              <h2 class="price-text"><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %></h2>
-            </div>
+              <h2><%= offer.title.truncate(30) %></h2>
+              <% case offer.compensation_type %>
+              <% when "Price per hour" %>
+                <h2 class="card-price"><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %> / hour</h2>
+              <% when "Price per day" %>
+                <h2 class="card-price"><i class="fas fa-dollar-sign"></i> <%= offer.compensation_value %> / day</h2>
+              <% when "Free", "Other" %>
+                <h2 class="card-price"><%= offer.compensation_value %></h2>
+              <% end %>
+              </div>
             <div class="card-title-info">
               <div class="card-category-condition">
                 <p class="card-tag"><%= offer.category %></p>
                 <p class="card-tag"><%= offer.condition %></p>
               </div>
-              <p class="card-tag-invisible"><%#= offer.location %></p>
             </div>
             <div class="show-profile product-index-show-profile">
               <%= cl_image_tag offer.user.photo.key, class: "avatar" %>
