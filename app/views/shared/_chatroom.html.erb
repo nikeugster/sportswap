@@ -2,7 +2,7 @@
 
 <div class="chatroom-content">
   <div class="show-profile">
-    <%= cl_image_tag @chatpartner.photo.key, class: "avatar" %>
+    <%= cl_image_tag @chatpartner.photo.key, class: "avatar-chatroom" %>
     <div class="d-flex flex-column justify-content-space-around pl-1">
       <p class="partner-name"><%= @chatpartner.first_name %></p>
       <% if chatroom.messages.present? && chatroom.messages.last.content.length >= 25 %>
