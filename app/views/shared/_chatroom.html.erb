@@ -5,10 +5,8 @@
     <%= cl_image_tag @chatpartner.photo.key, class: "avatar-chatroom" %>
     <div class="d-flex flex-column justify-content-space-around pl-1">
       <p class="partner-name"><%= @chatpartner.first_name %></p>
-      <% if chatroom.messages.present? && chatroom.messages.last.content.length >= 25 %>
-        <p class="message-preview"><%= chatroom.messages.last.content[0..25] %>...</p>
-      <% elsif chatroom.messages.present? && chatroom.messages.last.content.length < 25 %>
-        <p class="message-preview"><%= chatroom.messages.last.content %></p>
+      <% if chatroom.messages.present? %>
+        <p class="message-preview"><%= chatroom.messages.last.content.truncate(20) %></p>
       <% else %>
         <p class="message-preview">No messages yet...</p>
       <% end %>
