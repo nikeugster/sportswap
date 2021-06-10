@@ -125,7 +125,12 @@
   width: 32px;
 }
 
-.rating-text {
+.review-headline {
+  color: $sportswap-blue;
+  font-size: 21px;
+}
+
+.review-text {
   margin-bottom: 13px;
 }
 
@@ -133,7 +138,6 @@
   display: flex;
 }
 
-.reviews-profile {
+.reviews-center {
   display: flex;
-  align-items: center;
 }

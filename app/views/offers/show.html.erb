@@ -135,14 +135,15 @@
 <div class="d-flex justify-content-between pl-5 pr-5 pt-3" id="show-p">
   <div class="col-7">
     <p class="pl-0"><%= @offer.description %></p>
-    <h3 class= "mt-4 mb-3 ">Reviews</h3>
+    <h3 class= "review-headline mt-4 mb-3 ">Reviews</h3>
     <% if @offer.reviews.any? %>
       <% @offer.reviews.each do |review| %>
-        <div class="mb-4">
-          <hr>
+        <hr>
+        <div class="my-2">
           <%= render partial: 'shared/review-list', locals: {review: review, users: @users} %>
         </div>
       <% end %>
+      <hr class="pb-3">
     <% else %>
       <p>No reviews yet...</p>
     <% end %>

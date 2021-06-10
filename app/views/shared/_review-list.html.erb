@@ -1,8 +1,8 @@
 <div class="reviews-container">
-  <div class="reviews-profile col-4">
-      <div class="show-profile mb-4">
+  <div class="col-4 mt-2">
+      <div class="show-profile">
       <%= cl_image_tag users.find(review.author_id).photo.key, class: "avatar" %>
-      <div class="d-flex flex-column ml-2">
+      <div class="ml-2">
         <div class="show-name">
           <p><%= users.find(review.author_id).first_name %> <%= users.find(review.author_id).last_name %></p>
         </div>
@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div class="col-8">
+  <div class="col-8 mt-1">
     <div class="show-rating">
       <% review.rating.times do %>
         <i class="fas fa-star"></i>
@@ -21,7 +21,7 @@
 
     </div>
     <div>
-      <div class="rating-text">
+      <div class="review-text">
         <%= review.content %>
       </div>
     </div>
