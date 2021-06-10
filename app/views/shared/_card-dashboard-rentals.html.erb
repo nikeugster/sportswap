@@ -1,60 +1,65 @@
 <div class="card-whole-link col-12" style="padding: 0">
-  <%= link_to offer_path(booking.offer.id) do %>
-      <div class="card-product p-3 mb-3">
-      <% if booking.offer.photos.attached? %>
-        <%= cl_image_tag booking.offer.photos[0].key, id: "card-product-img" %>
-      <% end %>
-        <div class="card-product-rightside">
-          <div class="product-infos card-dashboard-rentals-infos pl-3">
-            <div>
-              <div class="card-title-location">
-                <h2><%= booking.offer.title %></h2>
-                <h2><i class="fas fa-dollar-sign"></i> <%= booking.offer.compensation_value %></h2>
-              </div>
-              <div class="card-title-info">
-                <div class="card-category-condition">
-                  <p class="card-tag"><%= booking.offer.category %></p>
-                  <p class="card-tag"><%= booking.offer.condition %></p>
-                </div>
-              </div>
+  <div class="card-product p-3 mb-3">
+  <%= link_to offer_path(booking.offer.id), class: "rental-link" do %>
+    <% if booking.offer.photos.attached? %>
+      <%= cl_image_tag booking.offer.photos[0].key, id: "card-product-img-rental" %>
+    <% end %>
+  <% end %>
+    <div class="card-product-rightside">
+      <div class="product-infos card-dashboard-rentals-infos pl-3">
+        <div>
+          <div class="card-title-location">
+            <%= link_to offer_path(booking.offer.id) do %>
+              <h2><%= booking.offer.title %></h2>
+            <% end %>
+            <h2><i class="fas fa-dollar-sign"></i> <%= booking.offer.compensation_value %></h2>
+          </div>
+          <div class="card-title-info">
+            <div class="card-category-condition">
+              <p class="card-tag"><%= booking.offer.category %></p>
+              <p class="card-tag"><%= booking.offer.condition %></p>
             </div>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="show-profile pt-2">
-                <%= cl_image_tag booking.offer.user.photo.key, class: "avatar" %>
-                <div class="d-flex flex-column justify-content-space-around">
-                  <div class="show-name">
-                    <p><%= booking.offer.user.first_name %></p>
-                  </div>
-                  <div class="show-rating">
-                    <% if booking.offer.user.reviews.any? %>
-                      <% average = booking.offer.user.reviews.map { |review| review.rating }.sum / booking.offer.user.reviews.length %>
-                      <% average.times do %>
-                       <i class="fas fa-star"></i>
-                      <% end %>
-                      <% (5 - average).times do  %>
-                       <i class="far fa-star"></i>
-                      <% end %>
-                    <% else %>
-                      <p>no reviews yet</p>
-                    <% end %>
-                  </div>
-                </div>
+            <%= link_to booking_path(booking), method: :delete, remote: true, class: "dashboard-links", :data => {:confirm => 'Are you sure? This will delete/cancel the booking request.'} do %>
+              <i class="fas fa-trash-alt dashboard-declined-text"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="show-profile pt-2">
+            <%= cl_image_tag booking.offer.user.photo.key, class: "avatar" %>
+            <div class="d-flex flex-column justify-content-space-around">
+              <div class="show-name">
+                <p><%= booking.offer.user.first_name %></p>
               </div>
-              <% booking_id = "booking-status-#{booking.id}" %>
-              <div id="<%= booking_id %>">
-                <% case booking.status %>
-                <% when "pending" %>
-                  <p class="dashboard-pending-text"><i class="fas fa-question-circle"></i> reviewing...</p>
-                <% when "accepted" %>
-                  <p class="dashboard-accepted-text"><i class="fas fa-check-circle"></i> accepted!</p>
-                <% when "declined" %>
-                  <p class="dashboard-declined-text"><i class="fas fa-times-circle"></i> declined!</p>
+              <div class="show-rating">
+                <% if booking.offer.user.reviews.any? %>
+                  <% average = booking.offer.user.reviews.map { |review| review.rating }.sum / booking.offer.user.reviews.length %>
+                  <% average.times do %>
+                   <i class="fas fa-star"></i>
+                  <% end %>
+                  <% (5 - average).times do  %>
+                   <i class="far fa-star"></i>
+                  <% end %>
+                <% else %>
+                  <p>no reviews yet</p>
                 <% end %>
               </div>
             </div>
-            <p>You requested a booking from <%= booking.starts_at.strftime("%b %d, %H:%M") %> to <%= booking.ends_at.strftime("%b %d, %H:%M") %></p>
+          </div>
+          <% booking_id = "booking-status-#{booking.id}" %>
+          <div id="<%= booking_id %>">
+            <% case booking.status %>
+            <% when "pending" %>
+              <p class="dashboard-pending-text"><i class="fas fa-question-circle"></i> reviewing...</p>
+            <% when "accepted" %>
+              <p class="dashboard-accepted-text"><i class="fas fa-check-circle"></i> accepted!</p>
+            <% when "declined" %>
+              <p class="dashboard-declined-text"><i class="fas fa-times-circle"></i> declined!</p>
+            <% end %>
           </div>
         </div>
+        <p>You requested a booking from <%= booking.starts_at.strftime("%b %d, %H:%M") %> to <%= booking.ends_at.strftime("%b %d, %H:%M") %></p>
       </div>
-  <% end %>
+    </div>
+  </div>
 </div>
