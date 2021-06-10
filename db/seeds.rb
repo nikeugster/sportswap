@@ -430,7 +430,7 @@ puts "Created review 2 for '#{chrissie_offer_1.title}'"
 
 chrissie_offer_2_review_1 = Review.new(
   rating: 5,
-  content: "The biked works perfectly, got nothing to complain about! Chrissie was relaxed as usual and even gave me another day with the bike for free. 5/5 would rent again",
+  content: "The bikes works perfectly, got nothing to complain about! Chrissie was relaxed as usual and even gave me another day with the bike for free. 5/5 would rent again",
   user_id: chrissie.id,
   offer_id: 2,
   author_id: 4
@@ -465,7 +465,7 @@ chrissie_offer_3_review_1.save!
 puts "Created review 1 for '#{chrissie_offer_3.title}'"
 
 chrissie_offer_3_review_2 = Review.new(
-  rating: 1,
+  rating: 5,
   content: "Why does this skateboard not have any wheels??! I tried to skate in the park but it just wouldn't work??! People looked at me like I was a noob, but it's not my fault??!",
   user_id: chrissie.id,
   offer_id: 3,
@@ -490,7 +490,7 @@ puts "Created review 1 for '#{juergen_offer_1.title}'"
 
 juergen_offer_1_review_2 = Review.new(
   rating: 5,
-  content: "Juergen is a really forward-coming, he saved me a lot of time picking up the rod by bringing it to our fishing spot himself!",
+  content: "Juergen is a really forward-coming type, he saved me a lot of time picking up the rod by bringing it to our fishing spot himself!",
   user_id: juergen.id,
   offer_id: 4,
   author_id: 3
@@ -550,7 +550,7 @@ puts "Created review 2 for '#{juergen_offer_3.title}'"
 
 juergen_offer_4_review_1 = Review.new(
   rating: 5,
-  content: "Amazing! Usually you'd pay 100 EUR+ and day for this! Mr. Dose is such a good person, and he gives you a good instruction to the intricacies of this high-end windsurf.",
+  content: "Amazing! Usually you'd pay 100 EUR+ a day for this! Mr. Dose is such a good person, and he gives you a good instruction to the intricacies of this high-end windsurf.",
   user_id: juergen.id,
   offer_id: 7,
   author_id: 4
@@ -574,7 +574,7 @@ puts "Created review 2 for '#{juergen_offer_4.title}'"
 
 julian_offer_1_review_1 = Review.new(
   rating: 5,
-  content: "Julian is a very good guide for the area. We actually invited him to join for the day on the sailing boat. He really doesn't do this for money, but for fun.",
+  content: "Julian is a very good guide for the area. We invited him to join for the day on the sailing boat. He really doesn't do this for money, but for fun.",
   user_id: julian.id,
   offer_id: 8,
   author_id: 4
@@ -586,7 +586,7 @@ puts "Created review 1 for '#{julian_offer_1.title}'"
 
 julian_offer_1_review_2 = Review.new(
   rating: 5,
-  content: "Rügen is a beautiful area, Julian's yacht is the perfect vehicle to explore its shores! Thank you again, Julian, for being such a sport and forgiving me for breaking a window..",
+  content: "Rügen is a beautiful area, and Julian's yacht is the perfect vehicle to explore its shores! Thank you again, Julian, for being such a sport and forgiving me for breaking a window..",
   user_id: julian.id,
   offer_id: 8,
   author_id: 2
@@ -646,7 +646,7 @@ puts "Created review 2 for '#{sandra_offer_1.title}'"
 
 sandra_offer_2_review_1 = Review.new(
   rating: 5,
-  content: "What a great board! Mine is already a bit old and I wanted to try a Salomon for some time now. And wow, what a difference it is!",
+  content: "What a great board! Mine is a bit old already and I wanted to try a Salomon for some time now. And wow, what a difference it is!",
   user_id: sandra.id,
   offer_id: 11,
   author_id: 1
