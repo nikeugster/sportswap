@@ -146,7 +146,7 @@
       <hr class="pb-3">
     <% else %>
     <% if current_user.nil? || current_user.id != @offer.user_id %>
-      <p>Book “<%= @offer.title %>" and be the first to write a review.</p>
+      <p>Book “<%= @offer.title %>" and be the first to leave a review.</p>
     <% else %>
       <p>Your listing “<%= @offer.title %>" has no reviews yet.</p>
     <% end %>
