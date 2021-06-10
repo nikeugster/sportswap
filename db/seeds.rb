@@ -402,3 +402,220 @@ sandra_offer_3.save!
 
 puts "Created offer '#{sandra_offer_3.title}' of '#{sandra_offer_3.user.first_name}'"
 
+puts "** Creating reviews **"
+
+chrissie_offer_1_review_1 = Review.new(
+  rating: 5,
+  content: "I'm not one to write reviews, but I had to this time. Chrissie is the loveliest person ever, she brought the red canoe to my home free-of-charge. She showed me how to use it. And she's a plain awesome human being!",
+  user_id: chrissie.id,
+  offer_id: 1,
+  author_id: 3
+)
+
+chrissie_offer_1_review_1.save!
+
+puts "Created review 1 for '#{chrissie_offer_1.title}'"
+
+chrissie_offer_1_review_2 = Review.new(
+  rating: 5,
+  content: "What do you do when you have friends over in Berlin during summer? Well, to the lakes you go! Chrissie's red canoe was all we needed to have a fun afternoon. Thx!",
+  user_id: chrissie.id,
+  offer_id: 1,
+  author_id: 4
+)
+
+chrissie_offer_1_review_2.save!
+
+puts "Created review 2 for '#{chrissie_offer_1.title}'"
+
+chrissie_offer_2_review_1 = Review.new(
+  rating: 5,
+  content: "The biked works perfectly, got nothing to complain about! Chrissie was relaxed as usual and even gave me another day with the bike for free. 5/5 would rent again",
+  user_id: chrissie.id,
+  offer_id: 2,
+  author_id: 4
+)
+
+chrissie_offer_2_review_1.save!
+
+puts "Created review 1 for '#{chrissie_offer_2.title}'"
+
+chrissie_offer_2_review_2 = Review.new(
+  rating: 4,
+  content: "I do identify as a hipster and my friends say the same about me. Therefore Chrissie's Great Hipster Bike fulfilled all my needs. A bit pricy though for a day.",
+  user_id: chrissie.id,
+  offer_id: 2,
+  author_id: 3
+)
+
+chrissie_offer_2_review_2.save!
+
+puts "Created review 2 for '#{chrissie_offer_2.title}'"
+
+chrissie_offer_3_review_1 = Review.new(
+  rating: 5,
+  content: "Wow a free snowboard! That's exactly what I needed to hit the slopes here in Berlin. The right bind is a bit janky as Chrissie points out, but I had a great time still!",
+  user_id: chrissie.id,
+  offer_id: 3,
+  author_id: 4
+)
+
+chrissie_offer_3_review_1.save!
+
+puts "Created review 1 for '#{chrissie_offer_3.title}'"
+
+chrissie_offer_3_review_2 = Review.new(
+  rating: 1,
+  content: "Why does this skateboard not have any wheels??! I tried to skate in the park but it just wouldn't work??! People looked at me like I was a noob, but it's not my fault??!",
+  user_id: chrissie.id,
+  offer_id: 3,
+  author_id: 3
+)
+
+chrissie_offer_3_review_2.save!
+
+puts "Created review 2 for '#{chrissie_offer_3.title}'"
+
+juergen_offer_1_review_1 = Review.new(
+  rating: 5,
+  content: "The Trio Rex is state-of-the-art and I didn't expect to find it in Berlin tbh, as it's used for heavy-duty fishing in deeper waters. What a find!"
+  user_id: juergen.id,
+  offer_id: 4,
+  author_id: 4
+)
+
+juergen_offer_1_review_1.save!
+
+puts "Created review 1 for '#{juergen_offer_1.title}'"
+
+juergen_offer_1_review_2 = Review.new(
+  rating: 5,
+  content: "Juergen is a really forward-coming, he saved me a lot of time picking up the rod by bringing it to our fishing spot himself!",
+  user_id: juergen.id,
+  offer_id: 4,
+  author_id: 3
+)
+
+juergen_offer_1_review_2.save!
+
+puts "Created review 2 for '#{juergen_offer_1.title}'"
+
+juergen_offer_2_review_1 = Review.new(
+  rating: 5,
+  content: "What a great tent for the price of a sixpack of beers! Mr. Dose stayed with us and drank them with us. What a chill guy, what a great time!"
+  user_id: juergen.id,
+  offer_id: 5,
+  author_id: 4
+)
+
+juergen_offer_2_review_1.save!
+
+puts "Created review 1 for '#{juergen_offer_2.title}'"
+
+juergen_offer_2_review_2 = Review.new(
+  rating: 5,
+  content: "Mr. Dose is a legend: We were tenting near Hamburg and the tent ripped :o But Mr. Dose to the rescue: He brought us another one in the middle of the night!",
+  user_id: juergen.id,
+  offer_id: 5,
+  author_id: 3
+)
+
+juergen_offer_2_review_2.save!
+
+puts "Created review 2 for '#{juergen_offer_2.title}'"
+
+juergen_offer_3_review_1 = Review.new(
+  rating: 4,
+  content: "Not the greatest condition really, but did its job for the mild waves I faced. Price is good though and Mr. Dose is very kind!"
+  user_id: juergen.id,
+  offer_id: 6,
+  author_id: 4
+)
+
+juergen_offer_3_review_1.save!
+
+puts "Created review 1 for '#{juergen_offer_3.title}'"
+
+juergen_offer_3_review_2 = Review.new(
+  rating: 5,
+  content: "I actually just needed the board for a photoshoot, it's not easy to get by a surfboard on the fly. The used look was exactly what I was aiming for",
+  user_id: juergen.id,
+  offer_id: 6,
+  author_id: 3
+)
+
+juergen_offer_3_review_2.save!
+
+puts "Created review 2 for '#{juergen_offer_3.title}'"
+
+juergen_offer_4_review_1 = Review.new(
+  rating: 5,
+  content: "Amazing! Usually you'd pay 100 EUR+ and day for this! Mr. Dose is such a good person, and he gives you a good instruction to the intricacies of this high-end windsurf."
+  user_id: juergen.id,
+  offer_id: 7,
+  author_id: 4
+)
+
+juergen_offer_4_review_1.save!
+
+puts "Created review 1 for '#{juergen_offer_4.title}'"
+
+juergen_offer_4_review_2 = Review.new(
+  rating: 5,
+  content: "The Windsurf is amazing. Htting the waters with the Manic simply is a feeling out of this world! Thank you Mr. Dose <3",
+  user_id: juergen.id,
+  offer_id: 7,
+  author_id: 3
+)
+
+juergen_offer_4_review_2.save!
+
+puts "Created review 2 for '#{juergen_offer_4.title}'"
+
+julian_offer_1_review_1 = Review.new(
+  rating: 5,
+  content: "Julian is a very good guide for the area. We actually invited him to join for the day on the sailing boat. He really doesn't do this for money, but for fun."
+  user_id: juergen.id,
+  offer_id: 8,
+  author_id: 4
+)
+
+julian_offer_1_review_1.save!
+
+puts "Created review 1 for '#{julian_offer_1.title}'"
+
+julian_offer_1_review_2 = Review.new(
+  rating: 5,
+  content: "Rügen is a beautiful area, Julian's yacht is the perfect vehicle to explore its shores! Thank you again, Julian, for being such a sport and forgiving me for breaking a window..",
+  user_id: juergen.id,
+  offer_id: 8,
+  author_id: 3
+)
+
+julian_offer_1_review_2.save!
+
+puts "Created review 2 for '#{julian_offer_1.title}'"
+
+julian_offer_2_review_1 = Review.new(
+  rating: 5,
+  content: "I yearned to hit the links since I moved to Germany a couple of years ago. Somehow I never found the time. After a day on Julian's yacht, he was kind enough to lend me his Callaway drive!"
+  user_id: juergen.id,
+  offer_id: 8,
+  author_id: 4
+)
+
+julian_offer_2_review_1.save!
+
+puts "Created review 1 for '#{julian_offer_2.title}'"
+
+julian_offer_2_review_2 = Review.new(
+  rating: 5,
+  content: "Rügen is a beautiful area, Julian's yacht is the perfect vehicle to explore its shores! Thank you again, Julian, for being such a sport and forgiving me for breaking a window..",
+  user_id: juergen.id,
+  offer_id: 8,
+  author_id: 3
+)
+
+julian_offer_2_review_2.save!
+
+puts "Created review 2 for '#{julian_offer_2.title}'"
