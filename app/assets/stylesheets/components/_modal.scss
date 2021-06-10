@@ -8,13 +8,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 998;
 }
 
 .offer-confirmation-modal {
-  height: 65vh;
-  width: 60vw;
+  height: 75vh;
+  width: 65vw;
   background-color: white;
   border-radius: 5px;
+  z-index: 999;
 }
 
 .confirmation-photo {

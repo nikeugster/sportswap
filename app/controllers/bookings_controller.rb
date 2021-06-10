@@ -44,14 +44,17 @@ class BookingsController < ApplicationController
       booking_id: @booking.id
       )
 
-      redirect_to dashboard_path(anchor: "booking-requests-container")
+      case @booking.status
+      when "accepted" then redirect_to dashboard_path(anchor: "open-booking-requests"), notice: "You have accepted #{@booking.user.first_name}'s booking request."
+      when "declined" then redirect_to dashboard_path(anchor: "open-booking-requests"), notice: "You have declined #{@booking.user.first_name}'s booking request."
+      end
     end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     if @booking.destroy
-      redirect_to dashboard_path, notice: "Booking declined."
+      redirect_to dashboard_path(anchor: "open-booking-requests"), notice: "Booking deleted."
     else
       render :dashboard
     end
