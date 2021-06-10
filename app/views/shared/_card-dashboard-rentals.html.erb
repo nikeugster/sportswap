@@ -10,7 +10,7 @@
         <div>
           <div class="card-title-location">
             <%= link_to offer_path(booking.offer.id) do %>
-              <h2><%= booking.offer.title %></h2>
+              <h2><%= booking.offer.title.truncate(30) %></h2>
             <% end %>
             <h2><i class="fas fa-dollar-sign"></i> <%= booking.offer.compensation_value %></h2>
           </div>
