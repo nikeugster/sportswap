@@ -465,7 +465,7 @@ chrissie_offer_3_review_1.save!
 puts "Created review 1 for '#{chrissie_offer_3.title}'"
 
 chrissie_offer_3_review_2 = Review.new(
-  rating: 5,
+  rating: 3,
   content: "Why does this skateboard not have any wheels??! I tried to skate in the park but it just wouldn't work??! People looked at me like I was an idiot, but it's not my fault??!",
   user_id: chrissie.id,
   offer_id: 3,
