@@ -10,7 +10,6 @@
     <ol class="carousel-indicators">
       <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
       <li data-target="#multi-item-example" data-slide-to="1"></li>
-      <li data-target="#multi-item-example" data-slide-to="2"></li>
     </ol>
     <!--/.Indicators-->
     <!--Slides-->
@@ -41,7 +40,7 @@
               <% end %>
             </div>
             <div class="col-md-4 clearfix d-none d-md-block">
-              <%= link_to offer_path(offer[2]) do %> 
+              <%= link_to offer_path(offer[2]) do %>
                 <div class="card-carousel mb-2">
                   <%= cl_image_tag offer[2].photos[0].key, height: 500, width: 420, crop: :fill, class: ".card-carousel-img" %>
                   <div class="card-body">
