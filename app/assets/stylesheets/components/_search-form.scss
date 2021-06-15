@@ -7,6 +7,7 @@
 }
 
 .search-form .btn-search-form {
+  float: right;
   border: none;
   background-color: white;
   color: $sportswap-red
@@ -14,6 +15,7 @@
 
 .first-input {
   border: none;
+  width: 45%;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   margin-left: 8px;
   &:focus {
@@ -51,7 +53,7 @@ input:-webkit-autofill:active
 }
 
 .algolia-places {
-  width: auto;
+  width: 44%;
   height: auto;
   z-index: 500;
 
@@ -72,7 +74,6 @@ input:-webkit-autofill:active
   }
 
   input {
-    width: 230px;
     height: auto;
     margin-left: 8px;
     padding-left: 2px;
